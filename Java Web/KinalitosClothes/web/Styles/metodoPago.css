@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../Images/negro1.jpeg);
+    background-size: cover;
+    /* Quepa completa dentro del body */
+    background-repeat: no-repeat;
+    /* No repetir */
+    background-position: center top;
+    /* Centrada arriba */
+    background-attachment: fixed;
+    /* (Opcional) Efecto parallax */
+    min-height: 100vh;
+    color: #212529;
+    padding-top: 120px;
+}
+ 
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+ 
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    width: 100%;
+}
+ 
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+    flex: 0 0 auto;
+}
+ 
+.logo span {
+    color: #00b7ff;
+}
+ 
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+ 
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 25px;
+}
+ 
+.menu li a.get-pro {
+    color: #00b7ff;
+    border: 2px solid #00b7ff;
+    font-weight: 700;
+}
+ 
+.menu li a:hover,
+.menu li a.get-pro:hover {
+    color: #fff;
+    background-color: #00b7ff;
+    transform: translateY(-2px);
+}
+ 
+ 
+ 
+.main-container {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 30px 50px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.1);
+}
+ 
+h2 {
+    color: #2c3e50;
+    border-bottom: 4px solid #00aaff;
+    display: inline-block;
+    font-size: 32px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+ 
+.form-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+ 
+.form-group {
+    position: relative;
+    width: 280px;
+}
+ 
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 18px 16px 12px 16px;
+    border: 3px solid #00aaff;
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+    background: transparent;
+}
+ 
+.form-group label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 16px;
+    color: #333;
+    background: #fff;
+    padding: 0 6px;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+ 
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label,
+.form-group select:focus+label,
+.form-group select:not(:placeholder-shown)+label {
+    top: -10px;
+    font-size: 14px;
+    color: #00aaff;
+}
+ 
+.select-options {
+    border: 3px solid #00aaff;
+    border-radius: 10px;
+    padding: 18px 16px;
+    font-size: 18px;
+    background: #fff;
+    cursor: pointer;
+}
+ 
+.button-container {
+    text-align: center;
+}
+ 
+button {
+    padding: 18px 50px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(87, 108, 118, 0.2);
+}
+ 
+button:hover {
+    background-color: #9eb651;
+}
+ 
+.btn_agregar_metodopago {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background-color: #00aaff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.2);
+}
+ 
+.btn_agregar_metodopago:hover {
+    background-color: #0000cc;
+}
+ 
+.bnt_texto {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+ 
+.btn_icono {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #0815a5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s ease;
+    z-index: 1;
+}
+ 
+.btn_icono i {
+    font-size: 24px;
+}
+ 
+.btn_agregar_metodopago:hover .btn_icono {
+    left: 0;
+}
+ 
+.btn_agregar_metodopago:hover .bnt_texto {
+    opacity: 0;
+}

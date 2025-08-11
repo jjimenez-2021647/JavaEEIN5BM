@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url(../Images/negro3.jpeg);
+    background-size: cover;
+    /* Quepa completa dentro del body */
+    background-repeat: no-repeat;
+    /* No repetir */
+    background-position: center top;
+    /* Centrada arriba */
+    background-attachment: fixed;
+    /* (Opcional) Efecto parallax */
+    min-height: 100vh;
+    color: #212529;
+    padding-top: 120px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 30px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+    flex: 0 0 auto;
+}
+
+.logo span {
+    color: #00b7ff;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 25px;
+}
+
+.menu li a:hover {
+    color: #fff;
+    background-color: #00b7ff;
+    transform: translateY(-2px);
+}
+
+/*el espacio entre el nav y lo demas*/
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 30px 50px;
+}
+
+
+/*titulo*/
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+/*subtitulo*/
+.hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+/*todos los bloques ordenados en filas y columnas por el grind*/
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+/*boton ir a las vistas*/
+.btn_ver_gestion {
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2em 2.5em;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 6em;
+    border: transparent;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_ver_gestion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    border: 2px solid #a1c1cec2;
+}
+
+.btn_ver_gestion:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.btn_ver_gestion::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    background-color: #d1d1d1;
+}
+
+.btn_ver_gestion:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+/*Cartas donde esta la info y el boton*/
+.admin-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.admin-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+/*carta de fondo donde estan los span*/
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00b7ff, #0095d9);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+/*el titulo debajo de las cartas del span*/
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+/*descripcion de la carta*/
+.card-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .container {
+        padding: 100px 20px 50px;
+    }
+
+    .btn_crear_producto {
+        font-size: 15px;
+        padding: 1.5em 2em;
+        min-height: 70px;
+    }
+}

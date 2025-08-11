@@ -1,0 +1,656 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../Images/negro1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #212529;
+    padding-top: 120px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+    flex: 0 0 auto;
+}
+
+.logo span {
+    color: #00b7ff;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 25px;
+}
+
+.menu li a.get-pro {
+    color: #00b7ff;
+    border: 2px solid #00b7ff;
+    font-weight: 700;
+}
+
+.menu li a:hover,
+.menu li a.get-pro:hover {
+    color: #fff;
+    background-color: #00b7ff;
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #eeecec;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    background: #ffffff;
+    border: 2px solid #e3f2fd;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #00b7ff;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form_btn_eliminar_buscar {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.entrada_texto {
+    border: solid 1.5px #00b7ff;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #000000;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label-input {
+    position: absolute;
+    left: 15px;
+    color: #000000;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label-input-number {
+    position: absolute;
+    left: 15px;
+    color: transparent;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.entrada_texto:focus,
+.entrada_texto:valid {
+    outline: none;
+    border: 1.5px solid #0146a0;
+}
+
+.entrada_texto:focus ~ label,
+.entrada_texto:valid ~ label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: white;
+    padding: 0 .2em;
+    color: #000000;
+}
+
+.btn_crear_detalle_pedido {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+}
+
+.btn_crear_detalle_pedido,
+.btn_icono,
+.btn_texto {
+    transition: all 0.3s ease;
+}
+
+.btn_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_crear_detalle_pedido i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_crear_detalle_pedido:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_crear_detalle_pedido:hover .btn_texto {
+    color: transparent;
+}
+
+.btn_crear_detalle_pedido:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_crear_detalle_pedido:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+th {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn_buscar {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+    margin-top: 1%;
+}
+
+.btn_buscar,
+.btn_icono,
+.btn_texto {
+    transition: all 0.3s ease;
+}
+
+.btn_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_buscar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_buscar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_buscar:hover .btn_texto {
+    color: transparent;
+}
+
+.btn_buscar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_buscar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+.btn_editar {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+}
+
+.btn_editar,
+.btn_icono,
+.btn_texto {
+    transition: all 0.3s ease;
+}
+
+.btn_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_editar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_editar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_editar:hover .btn_texto {
+    color: transparent;
+}
+
+.btn_editar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_editar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+.btn_eliminar {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+.btn_eliminar,
+.btn_icono,
+.btn_texto {
+    transition: all 0.3s ease;
+}
+
+.btn_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_eliminar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_eliminar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_eliminar:hover .btn_texto {
+    color: transparent;
+}
+
+.btn_eliminar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_eliminar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+.message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 20px 0;
+    border-left: 5px solid;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border-left-color: #dc3545;
+}
+
+.warning {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
+    border-left-color: #ffc107;
+}
+
+.ingresar_id_act_detalle_pedido,
+.form_datos_actualizar_detalle_pedido {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.form_datos_actualizar_detalle_pedido {
+    margin-top: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    .nav-content {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    .navbar {
+        padding: 10px 0;
+    }
+    .nav-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    .menu li a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    .container {
+        margin: 10px;
+        padding: 20px 15px;
+    }
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .section {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    table {
+        font-size: 13px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    th,
+    td {
+        padding: 12px 8px;
+        min-width: 120px;
+    }
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .btn_editar,
+    .btn_eliminar {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 5px;
+        padding: 15px 10px;
+    }
+    .section {
+        padding: 15px 10px;
+    }
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .form-row .btn {
+        width: auto;
+        margin: 10px 5px 10px 0;
+    }
+}
