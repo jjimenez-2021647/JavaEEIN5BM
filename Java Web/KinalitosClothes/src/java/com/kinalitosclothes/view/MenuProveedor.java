@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import com.kinalitosclothes.modelo.ProveedoresDAO;
 
@@ -36,3 +36,4 @@ public class MenuProveedor {
         } while (opcion != 6);
     }
 }
+*/

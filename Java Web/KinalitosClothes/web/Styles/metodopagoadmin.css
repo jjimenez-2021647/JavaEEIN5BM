@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
- 
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url(../Images/negro1.jpeg);
@@ -19,7 +19,7 @@ body {
     color: #212529;
     padding-top: 120px;
 }
- 
+
 .navbar {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
@@ -30,7 +30,7 @@ body {
     padding: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
- 
+
 .nav-content {
     max-width: 1400px;
     margin: 0 auto;
@@ -40,7 +40,7 @@ body {
     padding: 15px 30px;
     width: 100%;
 }
- 
+
 .logo {
     font-size: 2.5rem;
     font-weight: 900;
@@ -50,11 +50,11 @@ body {
     font-family: 'Lato', sans-serif;
     flex: 0 0 auto;
 }
- 
+
 .logo span {
     color: #00b7ff;
 }
- 
+
 .menu {
     list-style: none;
     display: flex;
@@ -65,7 +65,7 @@ body {
     flex: 1;
     justify-content: center;
 }
- 
+
 .menu li a {
     color: #fff;
     text-decoration: none;
@@ -76,26 +76,26 @@ body {
     padding: 8px 16px;
     border-radius: 25px;
 }
- 
+
 .menu li a.get-pro {
     color: #00b7ff;
     border: 2px solid #00b7ff;
     font-weight: 700;
 }
- 
+
 .menu li a:hover,
 .menu li a.get-pro:hover {
     color: #fff;
     background-color: #00b7ff;
     transform: translateY(-2px);
 }
- 
+
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 100px 30px 50px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 40px;
 }
- 
+
 h1 {
     text-align: center;
     color: #eeecec;
@@ -104,7 +104,7 @@ h1 {
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
- 
+
 .section {
     background: #ffffff;
     border: 2px solid #e3f2fd;
@@ -114,42 +114,41 @@ h1 {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
- 
+
 .section:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
- 
+
 .section h2 {
     color: #2c3e50;
     margin-bottom: 25px;
-    /*Color de la linea debajo del texto*/
     border-bottom: 3px solid #00b7ff;
     padding-bottom: 10px;
     font-size: 1.8rem;
     font-weight: 600;
 }
- 
+
 .form-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     margin-bottom: 25px;
 }
- 
+
 .form-group {
     display: flex;
     flex-direction: column;
     position: relative;
 }
- 
+
 .form_btn_eliminar_buscar {
     display: flex;
     position: relative;
     justify-content: center;
- 
+
 }
- 
+
 .entrada_texto {
     border: solid 1.5px #00b7ff;
     border-radius: 1rem;
@@ -159,124 +158,49 @@ h1 {
     color: #000000;
     transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
- 
+
 .label-input {
     position: absolute;
     left: 15px;
-    /*Color del texto dentro del input*/
     color: #000000;
     pointer-events: none;
     transform: translateY(1rem);
     transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
- 
+
 .label-input-number {
     position: absolute;
     left: 15px;
-    /*Color del texto dentro del input*/
     color: transparent;
     pointer-events: none;
     transform: translateY(1rem);
     transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.label-input-number-largo {
-    position: absolute;
-    left: 15px;
-    /*Color del texto dentro del input*/
-    color: transparent;
-    pointer-events: none;
-    transform: translateY(1rem);
-    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
- 
+
 .entrada_texto:focus,
 .entrada_texto:valid {
     outline: none;
     border: 1.5px solid #0146a0;
 }
- 
+
 .entrada_texto:focus~label,
 .entrada_texto:valid~label {
     transform: translateY(-50%) scale(0.8);
     background-color: white;
     padding: 0 .2em;
-    /*color del texto cuando sube*/
     color: #000000;
 }
- 
-/*
-.btn_crear_producto {
-    position: relative;
-    font-size: 17px;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1em 2.5em;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 6em;
-    border: transparent;
-    transition: all 0.2s;
-    font-family: inherit;
-    font-weight: 500;
-    color: black;
-    background-color: white;
-}
- 
-.btn_crear_producto:hover {
- 
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
-    border: 2px solid #a1c1cec2;
-}
- 
-.btn_crear_producto:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 255, 255, 0.2);
-}
- 
-.btn_crear_producto::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-}
- 
-.btn_crear_producto::after {
-/*la onda de expancion*-/
-    background-color: #d1d1d1;
-}
- 
-.btn_crear_producto:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-    */
- 
-/*Boton crear*/
-/* Centrado del botón */
-.contenedor-btn-crear {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
- 
-/* Estilo del botón crear */
+
 .btn_crear_producto {
     --main-focus: #00e1ff;
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
     --main-color: #000000;
- 
+
     position: relative;
-    width: 220px;
-    height: 45px;
+    width: 160px;
+    height: 40px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -286,27 +210,29 @@ h1 {
     background-color: var(--bg-color);
     border-radius: 10px;
     overflow: hidden;
-    padding-left: 20px;
+    padding-left: 15px;
     gap: 10px;
     font-family: inherit;
-    transition: all 0.3s ease;
-    margin-top: 1%;
 }
- 
-/* Texto del botón */
-.btn_crear_producto .bnt_texto {
+
+.btn_crear_producto,
+.btn_icono,
+.bnt_texto {
+    transition: all 0.3s ease;
+}
+
+.bnt_texto {
     color: var(--font-color);
     font-weight: 600;
     z-index: 1;
     transition: color 0.3s ease;
 }
- 
-/* Icono */
-.btn_crear_producto .btn_icono {
+
+.btn_icono {
     position: absolute;
     right: 0;
     height: 100%;
-    width: 45px;
+    width: 40px;
     background-color: var(--bg-color-sub);
     display: flex;
     align-items: center;
@@ -314,36 +240,374 @@ h1 {
     z-index: 0;
     transition: all 0.3s ease;
 }
- 
+
 .btn_crear_producto i {
     color: var(--main-color);
     font-size: 18px;
     transition: all 0.3s ease;
 }
- 
-/* Efecto al pasar el mouse */
+
 .btn_crear_producto:hover {
     background-color: var(--bg-color);
 }
- 
+
 .btn_crear_producto:hover .bnt_texto {
     color: transparent;
 }
- 
+
 .btn_crear_producto:hover .btn_icono {
     width: 100%;
     right: 0;
     background-color: var(--bg-color-sub);
     z-index: 1;
 }
- 
-/* Efecto al hacer clic */
+
 .btn_crear_producto:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px var(--main-color);
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
 }
- 
- 
+
+.btn_actualizar {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+}
+
+.btn_actualizar,
+.btn_icono,
+.bnt_texto {
+    transition: all 0.3s ease;
+}
+
+.bnt_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_actualizar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_actualizar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_actualizar:hover .bnt_texto {
+    color: transparent;
+}
+
+.btn_actualizar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_actualizar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+.btn_buscar {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+    margin-top: 1%;
+}
+
+.btn_buscar,
+.btn_icono,
+.bnt_texto {
+    transition: all 0.3s ease;
+}
+
+.bnt_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_buscar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_buscar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_buscar:hover .bnt_texto {
+    color: transparent;
+}
+
+.btn_buscar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_buscar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+.btn_editar {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+}
+
+.btn_editar,
+.btn_icono,
+.bnt_texto {
+    transition: all 0.3s ease;
+}
+
+.bnt_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_editar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_editar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_editar:hover .bnt_texto {
+    color: transparent;
+}
+
+.btn_editar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_editar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+.btn_eliminar {
+    --main-focus: #ff0000;
+    --font-color: #000000;
+    --bg-color-sub: #ff5c5c;
+    --bg-color: #ffffff;
+    --main-color: #000000;
+
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
+}
+
+.btn_eliminar,
+.btn_icono,
+.bnt_texto {
+    transition: all 0.3s ease;
+}
+
+.bnt_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn_eliminar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn_eliminar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_eliminar:hover .bnt_texto {
+    color: transparent;
+}
+
+.btn_eliminar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_eliminar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+.message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 20px 0;
+    border-left: 5px solid;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.botonesTabla {
+    display: flex;
+    gap: 8px;
+}
+
+.error {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border-left-color: #dc3545;
+}
+
+.warning {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
+    border-left-color: #ffc107;
+}
+
+/* Estilos base de la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -353,14 +617,15 @@ table {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
- 
+
 th,
 td {
     padding: 16px;
     text-align: left;
     border-bottom: 1px solid #ecf0f1;
+
 }
- 
+
 th {
     background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
@@ -369,620 +634,215 @@ th {
     letter-spacing: 0.5px;
     font-size: 14px;
 }
- 
+
 tr {
     transition: all 0.3s ease;
 }
- 
+
 tr:hover {
     background-color: #f8f9fa;
-    transform: scale(1.01);
 }
- 
-.actions {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
- 
- 
-/* Centrado del botón */
-.contenedor-btn-crear {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
- 
-/* Estilo del botón buscar */
-.btn_buscar {
-    --main-focus: #00e1ff;
-    --font-color: #000000;
-    --bg-color-sub: #5ccbff;
-    --bg-color: #ffffff;
-    --main-color: #000000;
- 
-    position: relative;
-    width: 220px;
-    height: 45px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-    padding-left: 20px;
-    gap: 10px;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    margin-top: 5px;
-    margin-top: 1%;
-}
- 
-/* Texto del botón */
-.btn_buscar .bnt_texto {
-    color: var(--font-color);
-    font-weight: 600;
-    z-index: 1;
-    transition: color 0.3s ease;
-}
- 
-/* Icono */
-.btn_buscar .btn_icono {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 45px;
-    background-color: var(--bg-color-sub);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-    transition: all 0.3s ease;
-}
- 
-.btn_buscar i {
-    color: var(--main-color);
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
- 
-/* Efecto al pasar el mouse */
-.btn_buscar:hover {
-    background-color: var(--bg-color);
-}
- 
-.btn_buscar:hover .bnt_texto {
-    color: transparent;
-}
- 
-.btn_buscar:hover .btn_icono {
-    width: 100%;
-    right: 0;
-    background-color: var(--bg-color-sub);
-    z-index: 1;
-}
- 
-/* Efecto al hacer clic */
-.btn_buscar:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px var(--main-color);
-}
- 
- 
-.btn_editar {
-    --main-focus: #00e1ff;
-    --font-color: #000000;
-    --bg-color-sub: #5ccbff;
-    --bg-color: #ffffff;
-    --main-color: #000000;
- 
-    position: relative;
-    width: 150px;
-    height: 40px;
-    cursor: pointer;
-}
- 
-/* Estilo del botón editar */
-.btn_editar {
-    --main-focus: #00e1ff;
-    --font-color: #000000;
-    --bg-color-sub: #5ccbff;
-    /* Amarillo suave para distinguirlo */
-    --bg-color: #ffffff;
-    --main-color: #000000;
- 
-    position: relative;
-    width: 220px;
-    height: 45px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-    padding-left: 20px;
-    gap: 10px;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    margin-top: 1%;
-}
- 
-/* Texto del botón */
-.btn_editar .bnt_texto {
-    color: var(--font-color);
-    font-weight: 600;
-    z-index: 1;
-    transition: color 0.3s ease;
-}
- 
-/* Icono */
-.btn_editar .btn_icono {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 45px;
-    background-color: var(--bg-color-sub);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-    transition: all 0.3s ease;
-}
- 
-.btn_editar i {
-    color: var(--main-color);
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
- 
-/* Efecto al pasar el mouse */
-.btn_editar:hover {
-    background-color: var(--bg-color);
-}
- 
-.btn_editar:hover .bnt_texto {
-    color: transparent;
-}
- 
-.btn_editar:hover .btn_icono {
-    width: 100%;
-    right: 0;
-    background-color: var(--bg-color-sub);
-    z-index: 1;
-}
- 
-/* Efecto al hacer clic */
-.btn_editar:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px var(--main-color);
-}
- 
- 
-/* Estilo del botón eliminar */
-.btn_eliminar {
-    --main-focus: #00e1ff;
-    --font-color: #000000;
-    --bg-color-sub: #5ccbff;
-    /* Rojo claro */
-    --bg-color: #ffffff;
-    --main-color: #000000;
- 
-    position: relative;
-    width: 260px;
-    height: 45px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-    padding-left: 20px;
-    gap: 10px;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    margin-top: 1%;
-    margin-left: 5%;
-}
- 
-/* Texto del botón */
-.btn_eliminar .bnt_texto {
-    color: var(--font-color);
-    font-weight: 600;
-    z-index: 1;
-    transition: color 0.3s ease;
-}
- 
-/* Icono */
-.btn_eliminar .btn_icono {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 45px;
-    background-color: var(--bg-color-sub);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-    transition: all 0.3s ease;
-}
- 
-.btn_eliminar i {
-    color: var(--main-color);
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
- 
-/* Efecto al pasar el mouse */
-.btn_eliminar:hover {
-    background-color: var(--bg-color);
-}
- 
-.btn_eliminar:hover .bnt_texto {
-    color: transparent;
-}
- 
-.btn_eliminar:hover .btn_icono {
-    width: 100%;
-    right: 0;
-    background-color: var(--bg-color-sub);
-    z-index: 1;
-}
- 
-/* Efecto al hacer clic */
-.btn_eliminar:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px var(--main-color);
-}
- 
- 
-.message {
-    padding: 15px 20px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin: 20px 0;
-    border-left: 5px solid;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
- 
- 
- 
-.error {
-    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-    color: #721c24;
-    border-left-color: #dc3545;
-}
- 
-.warning {
-    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
-    color: #856404;
-    border-left-color: #ffc107;
-}
- 
-/* para buscar por el id */
-.ingresar_id_act_producto,
-.form_datos_actualizar_producto {
-    margin-bottom: 30px;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #e9ecef;
-}
- 
-.form_datos_actualizar_producto {
-    margin-top: 25px;
-}
- 
+
 /* Responsive Design */
+
+/* Tablets grandes y laptops pequeñas */
 @media (max-width: 1024px) {
     .container {
         margin: 20px;
         padding: 30px 20px;
     }
- 
+
     .nav-content {
         padding: 15px 20px;
     }
+    
+    .table-container {
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        font-size: 14px;
+    }
 }
- 
+
+/* iPad y tablets */
 @media (max-width: 768px) {
     body {
         padding-top: 80px;
     }
- 
+
     .navbar {
         padding: 10px 0;
     }
- 
+
     .nav-content {
         flex-direction: column;
         gap: 15px;
         padding: 10px;
     }
- 
+
     .logo {
         font-size: 2rem;
     }
- 
+
     .menu {
         flex-wrap: wrap;
         gap: 15px;
         justify-content: center;
     }
- 
+
     .menu li a {
         font-size: 14px;
         padding: 6px 12px;
     }
- 
- 
+
     .container {
         margin: 10px;
         padding: 20px 15px;
     }
- 
+
     h1 {
         font-size: 2rem;
         margin-bottom: 30px;
     }
- 
+
     .section {
         padding: 20px 15px;
         margin-bottom: 30px;
     }
- 
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 20px;
     }
- 
-    table {
-        font-size: 13px;
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+
+    /* Mejores estilos para tablet */
+    .table-container {
+        border-radius: 8px;
+        margin: 20px 0;
     }
- 
+
+    table {
+        min-width: 500px;
+        font-size: 13px;
+    }
+
     th,
     td {
-        padding: 12px 8px;
-        min-width: 120px;
+        padding: 10px 8px;
+        min-width: 100px;
     }
- 
+
+    th {
+        font-size: 12px;
+    }
+
+    /* Eliminar el hover transform en tablets para mejor rendimiento */
+    tr:hover {
+        background-color: #f8f9fa;
+        transform: none;
+    }
+
     .actions {
         flex-direction: column;
         gap: 5px;
     }
- 
-    .btn_editar,
-    .btn_eliminar {
-        font-size: 11px;
-        padding: 6px 12px;
-    }
 }
- 
+
+/* Móviles */
 @media (max-width: 480px) {
     .container {
         margin: 5px;
         padding: 15px 10px;
     }
- 
+
     .section {
         padding: 15px 10px;
     }
- 
+
+    /* Tabla tipo card en móviles */
+    .table-container {
+        box-shadow: none;
+        background: transparent;
+    }
+
+    table {
+        min-width: 100%;
+        background: transparent;
+    }
+
+
+    tr {
+        margin-bottom: 15px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border: none;
+    }
+
+    td {
+        text-align: right;
+        padding: 8px 0;
+        border: none;
+        border-bottom: 1px solid #ecf0f1;
+        white-space: normal;
+        min-width: auto;
+    }
+
+    td:before {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #3498db;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
     .btn {
         width: 100%;
         margin: 5px 0;
     }
- 
+
     .form-row .btn {
         width: auto;
         margin: 10px 5px 10px 0;
     }
 }
- 
-/* Estilo general para centrar todo */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
- 
-/* Contenedor principal */
-.main-container {
-    margin-top: 100px;
-    padding: 30px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 900px;
-    box-sizing: border-box;
-}
- 
-/* Título */
-.main-container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 28px;
-}
- 
-/* Fila del formulario */
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
- 
-/* Estilo original .form-group y el nuevo .form-group1 */
-.form-group1 {
-    position: relative;
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 30px;
-}
- 
-.form-group1 input,
-.form-group1 select {
-    width: 100%;
-    padding: 14px 12px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    background: transparent;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
- 
-.form-group1 input:focus,
-.form-group1 select:focus {
-    border-color: #007bff;
-}
- 
-/* Label flotante */
-.form-group1 label {
-    position: absolute;
-    top: 14px;
-    left: 12px;
-    color: #888;
-    font-size: 16px;
-    background-color: #fff;
-    padding: 0 4px;
-    transition: 0.2s ease all;
-    pointer-events: none;
-}
- 
-/* Animación cuando hay texto o focus */
-.form-group1 input:focus+label,
-.form-group1 input:not(:placeholder-shown)+label,
-.form-group1 select:focus+label,
-.form-group1 select:valid+label {
-    top: -10px;
-    left: 10px;
-    font-size: 13px;
-    color: #007bff;
-}
- 
-/* Botón bonito */
-.button-container {
-    text-align: center;
-    margin-top: 20px;
-}
- 
-.btn_agregar_metodopago {
-    background-color: #007bff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    color: white;
-    border-radius: 30px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.4s ease;
-    overflow: hidden;
-    position: relative;
-}
- 
-.bnt_texto {
-    z-index: 2;
-    position: relative;
-    transition: transform 0.3s ease;
-}
- 
-.btn_icono {
-    position: absolute;
-    right: 20px;
-    font-size: 18px;
-    color: white;
-    z-index: 1;
-    transition: transform 0.3s ease, right 0.3s ease;
-}
- 
-/* Efecto de expansión del ícono al hacer hover */
-.btn_agregar_metodopago:hover .btn_icono {
-    transform: translateX(-120%);
-    right: 50%;
-}
- 
-.btn_agregar_metodopago:hover .bnt_texto {
-    transform: translateX(20px);
-}
- 
-/* NAVBAR */
-.navbar {
-    width: 100%;
-    background-color: #1e1e1e;
-    color: white;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
- 
-.nav-content {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
- 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-}
- 
-.logo span {
-    color: #007bff;
-}
- 
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
- 
-.menu li a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
-}
- 
-.menu li a:hover {
-    color: #007bff;
-}
- 
-/* Responsive */
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        align-items: center;
+
+/* Para pantallas lit muy peques */
+@media (max-width: 320px) {
+    .container {
+        margin: 2px;
+        padding: 10px 5px;
     }
- 
-    .main-container {
-        padding: 20px;
+
+    th,
+    td {
+        padding: 8px 4px;
+        font-size: 12px;
     }
- 
-    .navbar {
-        text-align: center;
-    }
- 
-    .nav-content {
-        flex-direction: column;
-    }
+}
+
+/* Estilos adicionales para mejorar la experiencia */
+.table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
 }

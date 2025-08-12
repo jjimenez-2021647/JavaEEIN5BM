@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import com.kinalitosclothes.modelo.MetodoPagosDAO;
 import java.util.Scanner;
@@ -49,3 +49,4 @@ public class MenuMetodoPago {
         }
     }
 }
+*/

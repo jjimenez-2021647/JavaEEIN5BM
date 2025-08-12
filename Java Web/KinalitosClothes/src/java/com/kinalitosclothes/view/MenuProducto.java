@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import com.kinalitosclothes.modelo.ProductosDAO;
 import java.util.Scanner;
@@ -59,3 +59,4 @@ public class MenuProducto {
     }
 }
 
+*/

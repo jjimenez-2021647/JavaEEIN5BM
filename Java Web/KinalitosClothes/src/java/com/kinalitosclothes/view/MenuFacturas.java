@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import com.kinalitosclothes.modelo.FacturasDAO;
 import java.util.Scanner;
@@ -47,3 +47,4 @@ public class MenuFacturas {
 
     }
 }
+*/

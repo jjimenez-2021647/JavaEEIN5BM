@@ -123,7 +123,6 @@ h1 {
 .section h2 {
     color: #2c3e50;
     margin-bottom: 25px;
-    /*Color de la linea debajo del texto*/
     border-bottom: 3px solid #00b7ff;
     padding-bottom: 10px;
     font-size: 1.8rem;
@@ -163,7 +162,6 @@ h1 {
 .label-input {
     position: absolute;
     left: 15px;
-    /*Color del texto dentro del input*/
     color: #000000;
     pointer-events: none;
     transform: translateY(1rem);
@@ -173,7 +171,6 @@ h1 {
 .label-input-number {
     position: absolute;
     left: 15px;
-    /*Color del texto dentro del input*/
     color: transparent;
     pointer-events: none;
     transform: translateY(1rem);
@@ -191,71 +188,14 @@ h1 {
     transform: translateY(-50%) scale(0.8);
     background-color: white;
     padding: 0 .2em;
-    /*color del texto cuando sube*/
     color: #000000;
 }
 
-/*
-.btn_crear_producto {
-    position: relative;
-    font-size: 17px;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1em 2.5em;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 6em;
-    border: transparent;
-    transition: all 0.2s;
-    font-family: inherit;
-    font-weight: 500;
-    color: black;
-    background-color: white;
-}
-
-.btn_crear_producto:hover {
-
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
-    border: 2px solid #a1c1cec2;
-}
-
-.btn_crear_producto:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 255, 255, 0.2);
-}
-
-.btn_crear_producto::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-}
-
-.btn_crear_producto::after {
-/*la onda de expancion*-/
-    background-color: #d1d1d1;
-}
-
-.btn_crear_producto:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-*/
-
-/*Boton crear*/
 .btn_crear_producto {
     --main-focus: #00e1ff;
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
-    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -327,56 +267,87 @@ h1 {
     box-shadow: 0px 0px var(--main-color);
 }
 
+.btn_actualizar {
+    --main-focus: #00e1ff;
+    --font-color: #000000;
+    --bg-color-sub: #5ccbff;
+    --bg-color: #ffffff;
+    --main-color: #000000;
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 30px;
-    background: #ffffff;
+    position: relative;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding-left: 15px;
+    gap: 10px;
+    font-family: inherit;
 }
 
-th,
-td {
-    padding: 16px;
-    text-align: left;
-    border-bottom: 1px solid #ecf0f1;
-}
-
-th {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 14px;
-}
-
-tr {
+.btn_actualizar,
+.btn_icono,
+.bnt_texto {
     transition: all 0.3s ease;
 }
 
-tr:hover {
-    background-color: #f8f9fa;
-    transform: scale(1.01);
+.bnt_texto {
+    color: var(--font-color);
+    font-weight: 600;
+    z-index: 1;
+    transition: color 0.3s ease;
 }
 
-.actions {
+.btn_icono {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: var(--bg-color-sub);
     display: flex;
-    gap: 10px;
+    align-items: center;
     justify-content: center;
+    z-index: 0;
+    transition: all 0.3s ease;
 }
 
+.btn_actualizar i {
+    color: var(--main-color);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
 
-/*boton buscar*/
+.btn_actualizar:hover {
+    background-color: var(--bg-color);
+}
+
+.btn_actualizar:hover .bnt_texto {
+    color: transparent;
+}
+
+.btn_actualizar:hover .btn_icono {
+    width: 100%;
+    right: 0;
+    background-color: var(--bg-color-sub);
+    z-index: 1;
+}
+
+.btn_actualizar:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
 .btn_buscar {
     --main-focus: #00e1ff;
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
-    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -454,11 +425,10 @@ tr:hover {
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
-    /*borde*/
     --main-color: #000000;
 
     position: relative;
-    width: 150px;
+    width: 160px;
     height: 40px;
     cursor: pointer;
     display: flex;
@@ -526,13 +496,11 @@ tr:hover {
     box-shadow: 0px 0px var(--main-color);
 }
 
-/*boton eliminar*/
 .btn_eliminar {
-    --main-focus: #00e1ff;
+    --main-focus: #ff0000;
     --font-color: #000000;
-    --bg-color-sub: #5ccbff;
+    --bg-color-sub: #ff5c5c;
     --bg-color: #ffffff;
-    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -550,8 +518,6 @@ tr:hover {
     padding-left: 15px;
     gap: 10px;
     font-family: inherit;
-    margin-top: 1%;
-    margin-left: 5%;
 }
 
 .btn_eliminar,
@@ -615,7 +581,10 @@ tr:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-
+.botonesTabla {
+    display: flex;
+    gap: 8px;
+}
 
 .error {
     background: linear-gradient(135deg, #f8d7da, #f5c6cb);
@@ -629,21 +598,54 @@ tr:hover {
     border-left-color: #ffc107;
 }
 
-/* para buscar por el id */
-.ingresar_id_act_producto,
-.form_datos_actualizar_producto {
-    margin-bottom: 30px;
-    padding: 25px;
-    background: #ffffff;
+/* Estilos base de la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
     border-radius: 10px;
-    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
 }
 
-.form_datos_actualizar_producto {
-    margin-top: 25px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+
+}
+
+th {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
 }
 
 /* Responsive Design */
+
+/* Tablets grandes y laptops pequeñas */
 @media (max-width: 1024px) {
     .container {
         margin: 20px;
@@ -653,8 +655,19 @@ tr:hover {
     .nav-content {
         padding: 15px 20px;
     }
+    
+    .table-container {
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        font-size: 14px;
+    }
 }
 
+/* iPad y tablets */
 @media (max-width: 768px) {
     body {
         padding-top: 80px;
@@ -685,7 +698,6 @@ tr:hover {
         padding: 6px 12px;
     }
 
-
     .container {
         margin: 10px;
         padding: 20px 15px;
@@ -706,31 +718,40 @@ tr:hover {
         gap: 20px;
     }
 
+    /* Mejores estilos para tablet */
+    .table-container {
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
     table {
+        min-width: 500px;
         font-size: 13px;
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
     }
 
     th,
     td {
-        padding: 12px 8px;
-        min-width: 120px;
+        padding: 10px 8px;
+        min-width: 100px;
+    }
+
+    th {
+        font-size: 12px;
+    }
+
+    /* Eliminar el hover transform en tablets para mejor rendimiento */
+    tr:hover {
+        background-color: #f8f9fa;
+        transform: none;
     }
 
     .actions {
         flex-direction: column;
         gap: 5px;
     }
-
-    .btn_editar,
-    .btn_eliminar {
-        font-size: 11px;
-        padding: 6px 12px;
-    }
 }
 
+/* Móviles */
 @media (max-width: 480px) {
     .container {
         margin: 5px;
@@ -739,6 +760,47 @@ tr:hover {
 
     .section {
         padding: 15px 10px;
+    }
+
+    /* Tabla tipo card en móviles */
+    .table-container {
+        box-shadow: none;
+        background: transparent;
+    }
+
+    table {
+        min-width: 100%;
+        background: transparent;
+    }
+
+
+    tr {
+        margin-bottom: 15px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border: none;
+    }
+
+    td {
+        text-align: right;
+        padding: 8px 0;
+        border: none;
+        border-bottom: 1px solid #ecf0f1;
+        white-space: normal;
+        min-width: auto;
+    }
+
+    td:before {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #3498db;
+    }
+
+    td:last-child {
+        border-bottom: none;
     }
 
     .btn {
@@ -750,4 +812,37 @@ tr:hover {
         width: auto;
         margin: 10px 5px 10px 0;
     }
+}
+
+/* Para pantallas lit muy peques */
+@media (max-width: 320px) {
+    .container {
+        margin: 2px;
+        padding: 10px 5px;
+    }
+
+    th,
+    td {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+}
+
+/* Estilos adicionales para mejorar la experiencia */
+.table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
 }

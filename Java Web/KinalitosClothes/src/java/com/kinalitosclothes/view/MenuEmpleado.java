@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import com.kinalitosclothes.modelo.EmpleadosDAO;
 import java.util.Scanner;
@@ -33,3 +33,4 @@ public class MenuEmpleado {
         } while (opcion != 6);
     }
 }
+*/

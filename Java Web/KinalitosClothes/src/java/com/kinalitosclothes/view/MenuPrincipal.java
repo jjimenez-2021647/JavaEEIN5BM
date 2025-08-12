@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import com.kinalitosclothes.model.*;
 
@@ -86,3 +86,4 @@ public class MenuPrincipal {
         } while (op != 0);
     }
 }
+*/

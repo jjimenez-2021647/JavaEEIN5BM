@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import java.util.Scanner;
 import com.kinalitosclothes.modelo.UsuariosDAO;
@@ -49,3 +49,4 @@ public class MenuUsuarios {
 
     }
 }
+*/

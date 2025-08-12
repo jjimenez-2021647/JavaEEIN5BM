@@ -1,4 +1,4 @@
-package com.kinalitosclothes.view;
+/*package com.kinalitosclothes.view;
 
 import com.kinalitosclothes.modelo.PedidosDAO;
 import java.util.Scanner;
@@ -58,3 +58,4 @@ public class MenuPedidos {
         } while (op != 0);
     }
 }
+*/
