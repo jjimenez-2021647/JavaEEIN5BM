@@ -39,16 +39,6 @@ Create table MetodoPagos(
     primary key PK_codigoMetodoPago (codigoMetodoPago)
 );
 
--- Usuarios
-Create table Usuarios(
-	codigoUsuario int auto_increment,
-	nombreUsuario varchar(100) not null,
-    contraseñaUsuario varchar(100) not null,
-    tipoUsuario enum('Empleado', 'Cliente') not null,
-    fechaRegistro date,
-    primary key PK_codigoUsuario (codigoUsuario) 
-);
-
 -- Clientes
 Create table Clientes(
 	codigoCliente int auto_increment,
@@ -57,10 +47,10 @@ Create table Clientes(
 	correoCliente varchar(150) not null,
 	telefonoCliente varchar(20) not null,
 	direccionCliente varchar(200) not null,
-    codigoUsuario int not null, 
-	primary key PK_codigoCliente (codigoCliente),
-    constraint FK_ClientecodigoUsuario foreign key (codigoUsuario)
-		references Usuarios (codigoUsuario)
+    nombreUsuario varchar(100) not null,
+    contraseñaUsuario varchar(100) not null,
+    fechaRegistro date,
+	primary key PK_codigoCliente (codigoCliente)
 );
 
 -- Empleados
@@ -71,10 +61,10 @@ Create table Empleados(
 	correoEmpleado varchar(150) not null,
 	telefonoEmpleado varchar(20) not null,
 	direccionEmpleado varchar(200) not null,
-    codigoUsuario int not null, 
-    primary key PK_codigoEmpleado (codigoEmpleado),
-    constraint FK_EmpleadocodigoUsuario foreign key (codigoUsuario)
-		references Usuarios (codigoUsuario)
+    nombreUsuario varchar(100) not null,
+    contraseñaUsuario varchar(100) not null,
+    fechaRegistro date,
+    primary key PK_codigoEmpleado (codigoEmpleado)
 );
 
 -- Productos
@@ -163,10 +153,20 @@ Delimiter //
 			End //
 Delimiter ;
 
--- Trigger para cargar la fecha a la entidad usuarios
+-- Trigger para cargar la fecha a la entidad Cliente 
 Delimiter //
-	Create trigger tr_Before_Insert_Usuarios
-		Before Insert on Usuarios
+	Create trigger tr_Before_Insert_Clientes
+		Before Insert on Clientes
+		For each row
+			Begin	
+					set New.fechaRegistro = curdate();
+			End //
+Delimiter ;
+
+-- Trigger para cargar la fecha a la entidad Empleado 
+Delimiter //
+	Create trigger tr_Before_Insert_Empleados
+		Before Insert on Empleados
 		For each row
 			Begin	
 					set New.fechaRegistro = curdate();
@@ -481,97 +481,6 @@ call sp_EditarMetodoPago(18, 'Tarjeta', 'WU Servicios', 'Dollar');
 call sp_EditarMetodoPago(19, 'Efectivo', 'Caja Local', 'Quetzal');
 call sp_EditarMetodoPago(20, 'Tarjeta', 'Stripe Global', 'Dollar');
 
--- --------------------------- Entidad Usuario --------------------------- 
--- Agregar Usuario
-Delimiter //
-	Create procedure sp_AgregarUsuario(
-    in nombreUsuario varchar(100), 
-    in contraseñaUsuario varchar(100), 
-    in tipoUsuario enum('Empleado','Cliente'))
-		Begin
-			Insert into Usuarios(nombreUsuario, contraseñaUsuario, tipoUsuario)
-				Values(nombreUsuario, contraseñaUsuario, tipoUsuario);
-        End //
-Delimiter ;
-call sp_AgregarUsuario('admin01', 'admin2024', 'Cliente');
-call sp_AgregarUsuario('juanperez', 'pass123', 'Cliente');
-call sp_AgregarUsuario('carmen.m', 'cm456', 'Cliente');
-call sp_AgregarUsuario('sofia123', 's0f1aPass', 'Cliente');
-call sp_AgregarUsuario('marioGT', 'mario!@#', 'Cliente');
-call sp_AgregarUsuario('laura.r', 'l@urita', 'Cliente');
-call sp_AgregarUsuario('user_demo', 'demo2024', 'Cliente');
-call sp_AgregarUsuario('karen_89', 'kar345', 'Cliente');
-call sp_AgregarUsuario('admin_sys', 'sysadmin', 'Cliente');
-call sp_AgregarUsuario('pedro_r', 'pedro1234', 'Cliente');
-call sp_AgregarUsuario('angelica.g', 'angel789', 'Cliente');
-call sp_AgregarUsuario('oscar_u', 'oscu2024', 'Cliente');
-call sp_AgregarUsuario('claudia.t', 'claud!2024', 'Cliente');
-call sp_AgregarUsuario('adminMain', 'adminMain1', 'Cliente');
-call sp_AgregarUsuario('david_dev', 'devpass', 'Cliente');
-call sp_AgregarUsuario('sofiaAdmin', 'sofiA#2024', 'Cliente');
-call sp_AgregarUsuario('test_user', 'test123', 'Cliente');
-call sp_AgregarUsuario('natalia', 'nata2024', 'Cliente');
-call sp_AgregarUsuario('kevin.t', 'kevkev', 'Cliente');
-call sp_AgregarUsuario('admin_jose', 'jo$eAdm', 'Cliente');
-call sp_AgregarUsuario('1', '1', 'Empleado');
-call sp_AgregarUsuario('2', '2', 'Cliente');
-
--- Listar Usuario
-Delimiter //
-	Create procedure sp_ListarUsuario()
-		Begin
-			Select codigoUsuario, nombreUsuario, contraseñaUsuario, tipoUsuario, fechaRegistro from Usuarios;
-        End //
-Delimiter ;
-call sp_ListarUsuario();
-
--- Eliminar Usuario
-Delimiter //
-	Create procedure sp_EliminarUsuario(
-    in _codigoUsuario int)
-		Begin
-			set foreign_key_checks = 0;
-				Delete from Usuarios
-					where codigoUsuario = _codigoUsuario;
-				Select row_count() as filasEliminadas;
-			set foreign_key_checks = 1;
-        End//
-Delimiter ;
-call sp_EliminarUsuario(15);
--- Buscar Usuario
-Delimiter //
-	Create procedure sp_BuscarUsuario(
-    in _codigoUsuario int)
-		Begin
-			Select codigoUsuario, nombreUsuario, contraseñaUsuario, tipoUsuario, fechaRegistro from Usuarios
-				where codigoUsuario = _codigoUsuario;
-        End //
-Delimiter ;
-call sp_BuscarUsuario(1);
-
--- Editar Usuario
-Delimiter //
-	Create procedure sp_EditarUsuario(
-    in _codigoUsuario int, 
-    in _nombreUsuario varchar(100), 
-    in _contraseñaUsuario varchar(100), 
-    in _tipoUsuario enum('Empleado','Cliente'), 
-    in _fechaRegistro date)
-		Begin
-			Update Usuarios
-				set nombreUsuario = _nombreUsuario,
-					contraseñaUsuario = _contraseñaUsuario,
-                    tipoUsuario = _tipoUsuario,
-                    fechaRegistro = _fechaRegistro
-					where codigoUsuario = _codigoUsuario;
-        End //
-Delimiter ;
-call sp_EditarUsuario(16, 'sofiaAdmin', 'sofiActualizada2025', 'Cliente', '2025-06-01');
-call sp_EditarUsuario(17, 'test_user_updated', 'testActualizado', 'Cliente', '2025-06-02');
-call sp_EditarUsuario(18, 'natalia.t', 'nataNueva123', 'Cliente', '2025-06-03');
-call sp_EditarUsuario(19, 'kevinTech', 'kt2025!', 'Cliente', '2025-06-04');
-call sp_EditarUsuario(20, 'admin_jose_2', 'adminJose2025', 'Cliente', '2025-06-05');
-
 -- --------------------------- Entidad Cliente --------------------------- 
 -- Agregar Cliente
 Delimiter //
@@ -581,38 +490,39 @@ Delimiter //
     in correoCliente varchar(150), 
     in telefonoCliente varchar(20), 
     in direccionCliente varchar(200),
-    in codigoUsuario int)
+    in nombreUsuario varchar(100),
+    in contraseñaUsuario varchar(100))
 		Begin
-			Insert into Clientes(nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente, codigoUsuario)
-				Values(nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente, codigoUsuario);
+			Insert into Clientes(nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente, nombreUsuario, contraseñaUsuario)
+				Values(nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente, nombreUsuario, contraseñaUsuario);
         End //
 Delimiter ;
-call sp_AgregarCliente('Carlos', 'Ramírez', 'carlos.ramirez@gmail.com', '+502 5123-4567', 'Zona 1, Ciudad de Guatemala', 1);
-call sp_AgregarCliente('Ana', 'Gómez', 'ana.gomez@gmail.com', '+502 4785-1234', 'Zona 10, Guatemala', 2);
-call sp_AgregarCliente('Luis', 'Martínez', 'luis.martinez@gmail.com', '+502 2234-5678', 'Zona 7, Mixco', 3);
-call sp_AgregarCliente('María', 'Fernández', 'maria.fernandez@gmail.com', '+502 5566-7788', 'San Cristóbal, Mixco', 4);
-call sp_AgregarCliente('Jorge', 'Lopez', 'jorge.lopez@gmail.com', '+502 4356-7890', 'Villa Nueva, zona 4', 5);
-call sp_AgregarCliente('Andrea', 'Soto', 'andrea.soto@gmail.com', '+502 3278-9012', 'Zona 15, Vista Hermosa', 6);
-call sp_AgregarCliente('Fernando', 'Ortega', 'fernando.ortega@gmail.com', '+502 4123-6543', 'Zona 5, Guatemala', 7);
-call sp_AgregarCliente('Lucía', 'Pérez', 'lucia.perez@gmail.com', '+502 5456-7789', 'Amatitlán, Guatemala', 8);
-call sp_AgregarCliente('Diego', 'Alvarado', 'diego.alvarado@gmail.com', '+502 6345-1230', 'Zona 16, Cayalá', 9);
-call sp_AgregarCliente('Camila', 'Hernández', 'camila.hernandez@gmail.com', '+502 7543-2109', 'Zona 12, La Reformita', 10);
-call sp_AgregarCliente('Esteban', 'Chávez', 'esteban.chavez@gmail.com', '+502 6123-9876', 'Villa Canales, Guatemala', 11);
-call sp_AgregarCliente('Gabriela', 'Ramos', 'gabriela.ramos@gmail.com', '+502 4231-1020', 'San Miguel Petapa', 12);
-call sp_AgregarCliente('Pablo', 'Cruz', 'pablo.cruz@gmail.com', '+502 3345-7654', 'Zona 3, Guatemala', 13);
-call sp_AgregarCliente('Daniela', 'Mejía', 'daniela.mejia@gmail.com', '+502 4567-8901', 'Zona 11, Mariscal', 14);
-call sp_AgregarCliente('Mario', 'Escobar', 'mario.escobar@gmail.com', '+502 5432-1209', 'Santa Catarina Pinula', 14);
-call sp_AgregarCliente('Rebeca', 'Salazar', 'rebeca.salazar@gmail.com', '+502 6677-8902', 'Zona 6, Guatemala', 16);
-call sp_AgregarCliente('Óscar', 'Córdova', 'oscar.cordova@gmail.com', '+502 7098-3456', 'Zona 18, El Paraíso', 17);
-call sp_AgregarCliente('Isabel', 'Ruiz', 'isabel.ruiz@gmail.com', '+502 3210-7654', 'Mixco, zona 8', 18);
-call sp_AgregarCliente('Ricardo', 'García', 'ricardo.garcia@gmail.com', '+502 4890-3211', 'Zona 2, Jocotenango', 19);
-call sp_AgregarCliente('Valeria', 'Morales', 'valeria.morales@gmail.com', '+502 6201-2345', 'Zona 19, Guatemala', 20);
+call sp_AgregarCliente('Carlos', 'Ramírez', 'carlos.ramirez@gmail.com', '+502 5123-4567', 'Zona 1, Ciudad de Guatemala', "Carlos", "12345678");
+call sp_AgregarCliente('Ana', 'Gómez', 'ana.gomez@gmail.com', '+502 4785-1234', 'Zona 10, Guatemala', "anita", "6666666");
+call sp_AgregarCliente('Luis', 'Martínez', 'luis.martinez@gmail.com', '+502 2234-5678', 'Zona 7, Mixco', "Luisito", "1111111");
+call sp_AgregarCliente('María', 'Fernández', 'maria.fernandez@gmail.com', '+502 5566-7788', 'San Cristóbal, Mixco', "Carlos", "12345678");
+call sp_AgregarCliente('Jorge', 'Lopez', 'jorge.lopez@gmail.com', '+502 4356-7890', 'Villa Nueva, zona 4', "Carlos", "12345678");
+call sp_AgregarCliente('Andrea', 'Soto', 'andrea.soto@gmail.com', '+502 3278-9012', 'Zona 15, Vista Hermosa', "Carlos", "12345678");
+call sp_AgregarCliente('Fernando', 'Ortega', 'fernando.ortega@gmail.com', '+502 4123-6543', 'Zona 5, Guatemala', "Carlos", "12345678");
+call sp_AgregarCliente('Lucía', 'Pérez', 'lucia.perez@gmail.com', '+502 5456-7789', 'Amatitlán, Guatemala', "Carlos", "12345678");
+call sp_AgregarCliente('Diego', 'Alvarado', 'diego.alvarado@gmail.com', '+502 6345-1230', 'Zona 16, Cayalá', "Carlos", "12345678");
+call sp_AgregarCliente('Camila', 'Hernández', 'camila.hernandez@gmail.com', '+502 7543-2109', 'Zona 12, La Reformita', "Carlos", "12345678");
+call sp_AgregarCliente('Esteban', 'Chávez', 'esteban.chavez@gmail.com', '+502 6123-9876', 'Villa Canales, Guatemala', "Carlos", "12345678");
+call sp_AgregarCliente('Gabriela', 'Ramos', 'gabriela.ramos@gmail.com', '+502 4231-1020', 'San Miguel Petapa', "Carlos", "12345678");
+call sp_AgregarCliente('Pablo', 'Cruz', 'pablo.cruz@gmail.com', '+502 3345-7654', 'Zona 3, Guatemala', "Carlos", "12345678");
+call sp_AgregarCliente('Daniela', 'Mejía', 'daniela.mejia@gmail.com', '+502 4567-8901', 'Zona 11, Mariscal', "Carlos", "12345678");
+call sp_AgregarCliente('Mario', 'Escobar', 'mario.escobar@gmail.com', '+502 5432-1209', 'Santa Catarina Pinula', "Carlos", "12345678");
+call sp_AgregarCliente('Rebeca', 'Salazar', 'rebeca.salazar@gmail.com', '+502 6677-8902', 'Zona 6, Guatemala', "Carlos", "12345678");
+call sp_AgregarCliente('Óscar', 'Córdova', 'oscar.cordova@gmail.com', '+502 7098-3456', 'Zona 18, El Paraíso', "Carlos", "12345678");
+call sp_AgregarCliente('Isabel', 'Ruiz', 'isabel.ruiz@gmail.com', '+502 3210-7654', 'Mixco, zona 8', "Carlos", "12345678");
+call sp_AgregarCliente('Ricardo', 'García', 'ricardo.garcia@gmail.com', '+502 4890-3211', 'Zona 2, Jocotenango', "Carlos", "12345678");
+call sp_AgregarCliente('Valeria', 'Morales', 'valeria.morales@gmail.com', '+502 6201-2345', 'Zona 19, Guatemala', "Carlos", "12345678");
 
 -- Listar Clientes
 Delimiter //
 	Create procedure sp_ListarClientes()
 		Begin
-			Select codigoCliente, nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente from Clientes;
+			Select codigoCliente, nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente, nombreUsuario, contraseñaUsuario from Clientes;
         End //
 Delimiter ;
 call sp_ListarClientes();
@@ -637,7 +547,7 @@ Delimiter //
 	Create procedure sp_BuscarCliente(
     in _codigoCliente int)
 		Begin
-			Select codigoCliente, nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente from Clientes
+			Select codigoCliente, nombreCliente, apellidoCliente, correoCliente, telefonoCliente, direccionCliente, nombreUsuario, contraseñaUsuario from Clientes
 				where codigoCliente = _codigoCliente;
         End //
 Delimiter ;
@@ -651,22 +561,26 @@ Delimiter //
     in _apellidoCliente varchar(100), 
     in _correoCliente varchar(150), 
     in _telefonoCliente varchar(20), 
-    in _direccionCliente varchar(200))
+    in _direccionCliente varchar(200),
+    in _nombreUsuario varchar(100),
+    in _contraseñaUsuario varchar(100))
 		Begin
 			Update Clientes
 				set nombreCliente = _nombreCliente,
 				apellidoCliente = _apellidoCliente,
 				correoCliente = _correoCliente,
 				telefonoCliente = _telefonoCliente,
-                direccionCliente = _direccionCliente
+                direccionCliente = _direccionCliente,
+                nombreUsuario = _nombreUsuario,
+                contraseñaUsuario = _contraseñaUsuario
 					where codigoCliente = _codigoCliente;
         End //
 Delimiter ;
-call sp_EditarCliente(16, 'Rebeca', 'Hernández', 'rebeca.hernandez@gmail.com', '+502 7689-1234', 'Zona 6, El Gallito');
-call sp_EditarCliente(17, 'Óscar', 'Ramírez', 'oscar.ramirez@gmail.com', '+502 8090-3456', 'Zona 18, Las Ilusiones');
-call sp_EditarCliente(18, 'Isabel', 'López', 'isabel.lopez@gmail.com', '+502 3902-8765', 'Mixco, zona 1');
-call sp_EditarCliente(19, 'Ricardo', 'Estrada', 'ricardo.estrada@gmail.com', '+502 4791-2345', 'Zona 2, El Sauce');
-call sp_EditarCliente(20, 'Valeria', 'Guzmán', 'valeria.guzman@gmail.com', '+502 6012-9876', 'Zona 19, Santa Faz');
+call sp_EditarCliente(16, 'Rebeca', 'Hernández', 'rebeca.hernandez@gmail.com', '+502 7689-1234', 'Zona 6, El Gallito', "Carlos", "12345678");
+call sp_EditarCliente(17, 'Óscar', 'Ramírez', 'oscar.ramirez@gmail.com', '+502 8090-3456', 'Zona 18, Las Ilusiones', "Carlos", "12345678");
+call sp_EditarCliente(18, 'Isabel', 'López', 'isabel.lopez@gmail.com', '+502 3902-8765', 'Mixco, zona 1', "Carlos", "12345678");
+call sp_EditarCliente(19, 'Ricardo', 'Estrada', 'ricardo.estrada@gmail.com', '+502 4791-2345', 'Zona 2, El Sauce', "Carlos", "12345678");
+call sp_EditarCliente(20, 'Valeria', 'Guzmán', 'valeria.guzman@gmail.com', '+502 6012-9876', 'Zona 19, Santa Faz', "Carlos", "12345678");
 
 -- --------------------------- Entidad Empleado --------------------------- 
 -- Agregar Empleados
@@ -677,38 +591,39 @@ Delimiter //
     in correoEmpleado varchar(150), 
     in telefonoEmpleado varchar(20), 
     in direccionEmpleado varchar(200),
-    in codigoUsuario int)
+    in nombreUsuario varchar(100),
+    in contraseñaUsuario varchar(100))
 		Begin
-			Insert into Empleados(nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, codigoUsuario)
-				Values(nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, codigoUsuario);
+			Insert into Empleados(nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, nombreUsuario, contraseñaUsuario)
+				Values(nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, nombreUsuario, contraseñaUsuario);
         End //
 Delimiter ;
-call sp_AgregarEmpleado('Juan', 'Ramírez', 'juan.ramirez@empresa.com', '+502 5123-1123', 'Zona 1, Ciudad de Guatemala', 1);
-call sp_AgregarEmpleado('Karla', 'López', 'karla.lopez@empresa.com', '+502 4789-2210', 'Zona 9, Ciudad de Guatemala', 2);
-call sp_AgregarEmpleado('Roberto', 'Pérez', 'roberto.perez@empresa.com', '+502 5567-3344', 'Zona 4, Mixco', 3);
-call sp_AgregarEmpleado('Sofía', 'Gómez', 'sofia.gomez@empresa.com', '+502 4123-5588', 'Zona 10, Guatemala', 4);
-call sp_AgregarEmpleado('Luis', 'Castro', 'luis.castro@empresa.com', '+502 6345-1234', 'Zona 2, San Cristóbal', 5);
-call sp_AgregarEmpleado('Ana', 'Cabrera', 'ana.cabrera@empresa.com', '+502 7098-4321', 'Zona 6, Guatemala', 6);
-call sp_AgregarEmpleado('Mario', 'Sánchez', 'mario.sanchez@empresa.com', '+502 3289-7789', 'Zona 5, Mixco', 7);
-call sp_AgregarEmpleado('Elena', 'Martínez', 'elena.martinez@empresa.com', '+502 5454-6677', 'Zona 14, Guatemala', 8);
-call sp_AgregarEmpleado('Carlos', 'Velásquez', 'carlos.velasquez@empresa.com', '+502 6789-1122', 'Villa Nueva, zona 3', 9);
-call sp_AgregarEmpleado('María', 'Hernández', 'maria.hernandez@empresa.com', '+502 4321-2345', 'Zona 3, Ciudad de Guatemala', 10);
-call sp_AgregarEmpleado('Diego', 'Ortega', 'diego.ortega@empresa.com', '+502 7654-1203', 'San Miguel Petapa', 11);
-call sp_AgregarEmpleado('Lucía', 'Morales', 'lucia.morales@empresa.com', '+502 8521-9987', 'Zona 7, Mixco', 12);
-call sp_AgregarEmpleado('Pablo', 'Reyes', 'pablo.reyes@empresa.com', '+502 9087-2310', 'Zona 16, Cayalá', 13);
-call sp_AgregarEmpleado('Andrea', 'García', 'andrea.garcia@empresa.com', '+502 3456-7812', 'Zona 12, La Reformita', 14);
-call sp_AgregarEmpleado('Fernando', 'Chávez', 'fernando.chavez@empresa.com', '+502 1111-9999', 'Villa Canales', 14);
-call sp_AgregarEmpleado('Isabel', 'Rosales', 'isabel.rosales@empresa.com', '+502 7890-4567', 'Zona 8, Guatemala', 16);
-call sp_AgregarEmpleado('Gabriel', 'Torres', 'gabriel.torres@empresa.com', '+502 6234-8765', 'Zona 11, Mariscal', 17);
-call sp_AgregarEmpleado('Valeria', 'Navarro', 'valeria.navarro@empresa.com', '+502 9123-4456', 'Amatitlán', 18);
-call sp_AgregarEmpleado('Óscar', 'Luna', 'oscar.luna@empresa.com', '+502 8888-1212', 'Jocotenango, zona 2', 19);
-call sp_AgregarEmpleado('Rebeca', 'Juárez', 'rebeca.juarez@empresa.com', '+502 7766-3344', 'Santa Catarina Pinula', 20);
+call sp_AgregarEmpleado('Juan', 'Ramírez', 'juan.ramirez@empresa.com', '+502 5123-1123', 'Zona 1, Ciudad de Guatemala', "Carlos", "12345678");
+call sp_AgregarEmpleado('Karla', 'López', 'karla.lopez@empresa.com', '+502 4789-2210', 'Zona 9, Ciudad de Guatemala', "Carlos", "12345678");
+call sp_AgregarEmpleado('Roberto', 'Pérez', 'roberto.perez@empresa.com', '+502 5567-3344', 'Zona 4, Mixco', "Carlos", "12345678");
+call sp_AgregarEmpleado('Sofía', 'Gómez', 'sofia.gomez@empresa.com', '+502 4123-5588', 'Zona 10, Guatemala', "Carlos", "12345678");
+call sp_AgregarEmpleado('Luis', 'Castro', 'luis.castro@empresa.com', '+502 6345-1234', 'Zona 2, San Cristóbal', "Carlos", "12345678");
+call sp_AgregarEmpleado('Ana', 'Cabrera', 'ana.cabrera@empresa.com', '+502 7098-4321', 'Zona 6, Guatemala', "Carlos", "12345678");
+call sp_AgregarEmpleado('Mario', 'Sánchez', 'mario.sanchez@empresa.com', '+502 3289-7789', 'Zona 5, Mixco', "Carlos", "12345678");
+call sp_AgregarEmpleado('Elena', 'Martínez', 'elena.martinez@empresa.com', '+502 5454-6677', 'Zona 14, Guatemala', "Carlos", "12345678");
+call sp_AgregarEmpleado('Carlos', 'Velásquez', 'carlos.velasquez@empresa.com', '+502 6789-1122', 'Villa Nueva, zona 3', "Carlos", "12345678");
+call sp_AgregarEmpleado('María', 'Hernández', 'maria.hernandez@empresa.com', '+502 4321-2345', 'Zona 3, Ciudad de Guatemala', "Carlos", "12345678");
+call sp_AgregarEmpleado('Diego', 'Ortega', 'diego.ortega@empresa.com', '+502 7654-1203', 'San Miguel Petapa', "Carlos", "12345678");
+call sp_AgregarEmpleado('Lucía', 'Morales', 'lucia.morales@empresa.com', '+502 8521-9987', 'Zona 7, Mixco', "Carlos", "12345678");
+call sp_AgregarEmpleado('Pablo', 'Reyes', 'pablo.reyes@empresa.com', '+502 9087-2310', 'Zona 16, Cayalá', "Carlos", "12345678");
+call sp_AgregarEmpleado('Andrea', 'García', 'andrea.garcia@empresa.com', '+502 3456-7812', 'Zona 12, La Reformita', "Carlos", "12345678");
+call sp_AgregarEmpleado('Fernando', 'Chávez', 'fernando.chavez@empresa.com', '+502 1111-9999', 'Villa Canales', "Carlos", "12345678");
+call sp_AgregarEmpleado('Isabel', 'Rosales', 'isabel.rosales@empresa.com', '+502 7890-4567', 'Zona 8, Guatemala', "Carlos", "12345678");
+call sp_AgregarEmpleado('Gabriel', 'Torres', 'gabriel.torres@empresa.com', '+502 6234-8765', 'Zona 11, Mariscal', "Carlos", "12345678");
+call sp_AgregarEmpleado('Valeria', 'Navarro', 'valeria.navarro@empresa.com', '+502 9123-4456', 'Amatitlán', "Carlos", "12345678");
+call sp_AgregarEmpleado('Óscar', 'Luna', 'oscar.luna@empresa.com', '+502 8888-1212', 'Jocotenango, zona 2', "Carlos", "12345678");
+call sp_AgregarEmpleado('Rebeca', 'Juárez', 'rebeca.juarez@empresa.com', '+502 7766-3344', 'Santa Catarina Pinula', "1", "1");
 
 -- Listar Empleados
 Delimiter //
 	Create procedure sp_ListarEmpleados()
 		Begin
-			Select codigoEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, codigoUsuario from Empleados;
+			Select codigoEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, nombreUsuario, contraseñaUsuario from Empleados;
         End //
 Delimiter ;
 call sp_ListarEmpleados();
@@ -733,7 +648,7 @@ Delimiter //
 	Create procedure sp_BuscarEmpleado(
     in _codigoEmpleado int)
 		Begin
-			Select codigoEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, codigoUsuario from Empleados
+			Select codigoEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefonoEmpleado, direccionEmpleado, nombreUsuario, contraseñaUsuario from Empleados
 				where codigoEmpleado = _codigoEmpleado;
         End //
 Delimiter ;
@@ -748,7 +663,8 @@ Delimiter //
     in _correoEmpleado varchar(150), 
     in _telefonoEmpleado varchar(20), 
     in _direccionEmpleado varchar(200),
-    in _codigoUsuario int)
+    in _nombreUsuario varchar(100),
+    in _contraseñaUsuario varchar(100))
 		Begin
 			Update Empleados
 				set nombreEmpleado = _nombreEmpleado,
@@ -756,15 +672,16 @@ Delimiter //
 				correoEmpleado = _correoEmpleado,
 				telefonoEmpleado = _telefonoEmpleado,
                 direccionEmpleado = _direccionEmpleado,
-                codigoUsuario = _codigoUsuario
+                nombreUsuario = _nombreUsuario,
+                contraseñaUsuario = _contraseñaUsuario
 					where codigoEmpleado = _codigoEmpleado;
         End //
 Delimiter ;
-call sp_EditarEmpleado(16, 'Isabel', 'Rosales', 'isabel.rosales@empresa.com', '+502 7890-4567', 'Zona 8, Guatemala', 16);
-call sp_EditarEmpleado(17, 'Gabriel', 'Torres', 'gabriel.torres@empresa.com', '+502 6234-8765', 'Zona 11, Mariscal', 17);
-call sp_EditarEmpleado(18, 'Valeria', 'Navarro', 'valeria.navarro@empresa.com', '+502 9123-4456', 'Amatitlán', 18);
-call sp_EditarEmpleado(19, 'Óscar', 'Luna', 'oscar.luna@empresa.com', '+502 8888-1212', 'Jocotenango, zona 2', 19);
-call sp_EditarEmpleado(20, 'Rebeca', 'Juárez', 'rebeca.juarez@empresa.com', '+502 7766-3344', 'Santa Catarina Pinula', 20);
+call sp_EditarEmpleado(16, 'Isabel', 'Rosales', 'isabel.rosales@empresa.com', '+502 7890-4567', 'Zona 8, Guatemala', "Carlos", "12345678");
+call sp_EditarEmpleado(17, 'Gabriel', 'Torres', 'gabriel.torres@empresa.com', '+502 6234-8765', 'Zona 11, Mariscal', "Carlos", "12345678");
+call sp_EditarEmpleado(18, 'Valeria', 'Navarro', 'valeria.navarro@empresa.com', '+502 9123-4456', 'Amatitlán', "Carlos", "12345678");
+call sp_EditarEmpleado(19, 'Óscar', 'Luna', 'oscar.luna@empresa.com', '+502 8888-1212', 'Jocotenango, zona 2', "Carlos", "12345678");
+call sp_EditarEmpleado(20, 'Rebeca', 'Juárez', 'rebeca.juarez@empresa.com', '+502 7766-3344', 'Santa Catarina Pinula', "Carlos", "12345678");
 
 -- --------------------------- Entidad Producto --------------------------- 
 -- Agregar Producto
@@ -1151,3 +1068,7 @@ call sp_EditarFactura(17, '2025-07-02', 5.00, 425.20, 'Emitida', 'Electronica', 
 call sp_EditarFactura(18, '2025-07-03', 15.00, 950.10, 'Emitida', 'Fisica', 18, 18);
 call sp_EditarFactura(19, '2025-07-04', 0.00, 299.90, 'Anulada', 'Fisica', 19, 19);
 call sp_EditarFactura(20, '2025-07-05', 20.00, 625.55, 'Emitida', 'Electronica', 20, 20);
+
+-- Busqueda del Empleado por nombre y contraseña
+
+Select * from Empleados where nombreUsuario = "1" and contraseñaUsuario = "1";
