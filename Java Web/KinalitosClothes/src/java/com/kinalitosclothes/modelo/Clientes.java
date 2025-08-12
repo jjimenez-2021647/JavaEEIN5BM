@@ -1,5 +1,7 @@
 package com.kinalitosclothes.modelo;
 
+import java.util.Date;
+
 public class Clientes {
 
     private int codigoCliente;
@@ -8,19 +10,23 @@ public class Clientes {
     private String correoCliente;
     private String telefonoCliente;
     private String direccionCliente;
-    private int codigoUsuario;
+    private String nombreUsuario;
+    private String contraseñaUsuario;
+    private Date fechaRegistro;
 
     public Clientes() {
     }
 
-    public Clientes(int codigoCliente, String nombreCliente, String apellidoCliente, String correoCliente, String telefonoCliente, String direccionCliente, int codigoUsuario) {
+    public Clientes(int codigoCliente, String nombreCliente, String apellidoCliente, String correoCliente, String telefonoCliente, String direccionCliente, String nombreUsuario, String contraseñaUsuario, Date fechaRegistro) {
         this.codigoCliente = codigoCliente;
         this.nombreCliente = nombreCliente;
         this.apellidoCliente = apellidoCliente;
         this.correoCliente = correoCliente;
         this.telefonoCliente = telefonoCliente;
         this.direccionCliente = direccionCliente;
-        this.codigoUsuario = codigoUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.contraseñaUsuario = contraseñaUsuario;
+        this.fechaRegistro = fechaRegistro;
     }
 
     public int getCodigoCliente() {
@@ -71,13 +77,31 @@ public class Clientes {
         this.direccionCliente = direccionCliente;
     }
 
-    public int getCodigoUsuario() {
-        return codigoUsuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setCodigoUsuario(int codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
+
+    public String getContraseñaUsuario() {
+        return contraseñaUsuario;
+    }
+
+    public void setContraseñaUsuario(String contraseñaUsuario) {
+        this.contraseñaUsuario = contraseñaUsuario;
+    }
+
+    public Date getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+        
+    /*        
 
     @Override
     public String toString() {
@@ -92,6 +116,6 @@ public class Clientes {
         sb.append(", codigoUsuario=").append(codigoUsuario);
         sb.append('}');
         return sb.toString();
-    }
+    }*/
 
 }

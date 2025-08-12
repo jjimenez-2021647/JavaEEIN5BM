@@ -56,19 +56,21 @@
                                         <!-- FORMULARIO DE LOGIN -->
                                         <div class="card-front">
                                             <div class="center-wrap">
-                                                <form action="LoginServlet" method="post">
+                                                <form action="Validar" method="Post">
                                                     <h4 class="heading">Inicio de Sesión</h4>
                                                     <div class="form-group">
-                                                        <input type="text" name="usuario" id="usuario_login" class="form-style" placeholder="Usuario" autocomplete="off" required>
+                                                        <input type="text" name="txtUsuario" id="txtUsuario" class="form-style" placeholder="Usuario" autocomplete="off" required>
                                                         <i class="input-icon material-icons">perm_identity</i>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" name="password" id="password_login" class="form-style" placeholder="Contraseña" autocomplete="off" required>
+                                                        <input type="password" name="txtPassword" id="txtPassword" class="form-style" placeholder="Contraseña" autocomplete="off" required>
                                                         <i class="input-icon material-icons">lock</i>
                                                     </div>
-                                                    <a type="submit" href="Index/menu.jsp" class="btnIniciar">Entrar</a>
+                                                    <center>
+                                                        <input type="submit" class="btnIniciar" name="accion" value="Ingresar" placeholder="Entrar">
+                                                    </center>
                                                     <p class="text-center">
-                                                        <a href="#" class="link">No te recuerdas de tu contraseña???</a>
+                                                        <a href="Index/Principal.jsp" class="link">No te recuerdas de tu contraseña???</a>
                                                     </p>
                                                 </form>
                                             </div>
@@ -77,21 +79,21 @@
                                         <!-- FORMULARIO DE REGISTRO -->
                                         <div class="card-back">
                                             <div class="center-wrap">
-                                                <form action="RegistroServlet" method="post">
+                                                <form action="" method="post">
                                                     <h4 class="heading">Registrarse</h4>
                                                     <div class="form-group">
-                                                        <input type="text" name="usuario" id="usuario_registro" class="form-style" placeholder="Usuario" autocomplete="off" required>
+                                                        <input type="text" name="txtUsuarioR" id="usuario_registro" class="form-style" placeholder="Usuario" autocomplete="off" required>
                                                         <i class="input-icon material-icons">perm_identity</i>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" name="password" id="password_registro" class="form-style" placeholder="Contraseña" autocomplete="off" required>
+                                                        <input type="password" name="txtPasswordR" id="password_registro" class="form-style" placeholder="Contraseña" autocomplete="off" required>
                                                         <i class="input-icon material-icons">lock</i>
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="password" name="confirmar" id="confirmar_registro" class="form-style" placeholder="Confirmar contraseña" autocomplete="off" required>
                                                         <i class="input-icon material-icons">lock</i>
                                                     </div>
-                                                    <a type="submit" href="#Login" class="btnRegistrar">Registrarme</a>
+                                                    <a type="submit" href="#" class="btnRegistrar">Registrarme</a>
                                                 </form>
                                             </div>
                                         </div>
