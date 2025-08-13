@@ -33,6 +33,7 @@ public class EmpleadosDAO {
                 empleados.setDireccionEmpleado(rs.getString("direccionEmpleado"));
                 empleados.setNombreUsuario(rs.getString("nombreUsuario"));
                 empleados.setContraseñaUsuario(rs.getString("contraseñaUsuario"));
+                empleados.setFechaRegistro(rs.getDate("fechaRegistro"));
             }
         } catch (Exception e) {
             System.out.println("El usuario o contraseña son incorrectos");
@@ -40,4 +41,5 @@ public class EmpleadosDAO {
         }
         return empleados;
     }
+    
 }
