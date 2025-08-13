@@ -51,7 +51,7 @@
                             <div class="form-group">
                                 <input type="number" class="entrada_texto" name="stock" min="0" placeholder="0"
                                        required id="numCodigoCliente">
-                                <label class="label-input-number">Codigo de Cliente</label>
+                                <label class="label-input-number">Codigo de Usuario</label>
                             </div>
                             <div class="form-group">
                                 <input type="number" class="entrada_texto" name="stock" min="0" placeholder="0"
