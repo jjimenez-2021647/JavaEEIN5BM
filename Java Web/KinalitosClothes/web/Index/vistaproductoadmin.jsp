@@ -19,7 +19,15 @@
                 <div class="nav-content">
                     <div class="logo">K<span>C</span></div>
                     <ul class="menu">
-                        <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">Menu Administrador</a></li>
+                        <li><a href="Controlador?menu=VistaAdmin">Menu Administrador</a></li>
+                    <li><a href="Controlador?menu=Proveedor">Proveedor</a></li>
+                    <li><a href="Controlador?menu=Categoria">Categoria</a></li>
+                    <li><a href="Controlador?menu=MetodoPago">Metodo P.</a></li>
+                    <li><a href="Controlador?menu=Usuarios&accion=Listar">Usuario</a></li>
+                    <li><a href="Controlador?menu=Producto">Producto</a></li>
+                    <li><a href="Controlador?menu=Pedido">Pedido</a></li>
+                    <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
+                    <li><a href="Controlador?menu=Factura">Factura</a></li>
                     </ul>
                 </div>
             </nav>

@@ -16,7 +16,7 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="${pageContext.request.contextPath}/Index/mispedidos.jsp">Mis Pedidos</a></li>
+                    <li><a href="Controlador?menu=MisPedidos">Mis Pedidos</a></li>
                 </ul>
             </div>
 

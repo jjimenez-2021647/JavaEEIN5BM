@@ -19,6 +19,14 @@
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
                     <li><a href="Controlador?menu=VistaAdmin">Menu Administrador</a></li>
+                    <li><a href="Controlador?menu=Proveedor">Proveedor</a></li>
+                    <li><a href="Controlador?menu=Categoria">Categoria</a></li>
+                    <li><a href="Controlador?menu=MetodoPago">Metodo P.</a></li>
+                    <li><a href="Controlador?menu=Usuarios&accion=Listar">Usuario</a></li>
+                    <li><a href="Controlador?menu=Producto">Producto</a></li>
+                    <li><a href="Controlador?menu=Pedido">Pedido</a></li>
+                    <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
+                    <li><a href="Controlador?menu=Factura">Factura</a></li>
                 </ul>
             </div>
         </nav>
@@ -146,9 +154,7 @@
                         <div class="message warning">
                             <i class="fa fa-exclamation-triangle"></i>
                             <strong>Atencion!</strong> Recuerda que vas a eliminar un registro si lo haces se
-                            borrara
-                            de
-                            forma permanente lo que quiere decir que ya nunca lo recuperaras
+                            borrara de forma permanente lo que quiere decir que ya nunca lo recuperaras
                         </div>
                     </form>
                 </div>

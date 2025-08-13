@@ -13,7 +13,7 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="${pageContext.request.contextPath}/Index/Principal.jsp">Inicio</a></li>
+                    <li><a href="Controlador?menu=Principal">Inicio</a></li>
                 </ul>
             </div>  
         </nav>
@@ -92,7 +92,7 @@
 
             <!-- Botón Cerrar Sesión -->
             <div class="logout-section">
-                <a id="CerrarSesion" class="btn btn-logout" href="${pageContext.request.contextPath}/index.jsp">Cerrar Sesión</a>
+                <a id="CerrarSesion" class="btn btn-logout" href="Controlador?menu=Index">Cerrar Sesión</a>
             </div>
     </body>
 </html>

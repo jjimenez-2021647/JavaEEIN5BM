@@ -18,10 +18,10 @@ public class UsuariosDAO {
         //instanciar el objeto de la entidad Empleado
         Usuarios usuarios = new Usuarios();
         //agregar una variable de tipo Select * from Usuarios where nombreUsuario = ? and contraseñaUsuario = ?" String para muestra de consulta sql
-        String sql = "Select * from Usuarios where correoUsuario = ? and contraseñaUsuario = ?;";
+        String sql = "call sp_BuscarUsuariosNC(?, ?)";
         try {
             con = cn.Conexion();
-            ps = con.prepareCall(sql);
+            ps = con.prepareStatement(sql);
             ps.setString(1, correoUsuario);
             ps.setString(2, contraseñaUsuario);
             rs = ps.executeQuery();

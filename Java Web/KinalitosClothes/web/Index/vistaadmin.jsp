@@ -23,7 +23,15 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="Controlador?menu=Principal">INICIO</a></li>
+                    <li><a href="Controlador?menu=VistaAdmin">Menu Administrador</a></li>
+                    <li><a href="Controlador?menu=Proveedor">Proveedor</a></li>
+                    <li><a href="Controlador?menu=Categoria">Categoria</a></li>
+                    <li><a href="Controlador?menu=MetodoPago">Metodo P.</a></li>
+                    <li><a href="Controlador?menu=Usuarios&accion=Listar">Usuario</a></li>
+                    <li><a href="Controlador?menu=Producto">Producto</a></li>
+                    <li><a href="Controlador?menu=Pedido">Pedido</a></li>
+                    <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
+                    <li><a href="Controlador?menu=Factura">Factura</a></li>
                 </ul>
             </div>
         </nav>
@@ -38,20 +46,11 @@
             <div class="dashboard-grid">
                 <div class="admin-card">
                     <span class="card-icon">
-                        <i class="fa-solid fa-clipboard-user"></i> </span>
-                    <h3 class="card-title">Cliente</h3>
-                    <p class="card-description">Gestiona la información de Clientes, como agregar, listar, actualizar,
-                        eliminar.</p>
-                    <a href="${pageContext.request.contextPath}/Index/vistaclientesadmin.jsp" class="btn_ver_gestion">Gestionar Cliente</a>
-                </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
                         <i class="fa-solid fa-boxes-packing"></i> </span>
                     <h3 class="card-title">Proveedor</h3>
                     <p class="card-description">Gestiona la información de los Proveedores, como agregar, listar,
                         actualizar, eliminar.</p>
-                    <a href="${pageContext.request.contextPath}/Index/vistaproveedoradmin.jsp" class="btn_ver_gestion">Gestionar Proveedores</a>
+                    <a href="Controlador?menu=Proveedor" class="btn_ver_gestion">Gestionar Proveedores</a>
                 </div>
 
                 <div class="admin-card">
@@ -60,7 +59,7 @@
                     <h3 class="card-title">Categoría</h3>
                     <p class="card-description">Gestiona la información de Categoria, como agregar, listar, actualizar,
                         eliminar.</p>
-                    <a href="${pageContext.request.contextPath}/Index/vistacategoria.jsp" class="btn_ver_gestion">Gestionar Categorías</a>
+                    <a href="Controlador?menu=Categoria" class="btn_ver_gestion">Gestionar Categorías</a>
                 </div>
 
                 <div class="admin-card">
@@ -69,7 +68,7 @@
                     <h3 class="card-title">Método Pago</h3>
                     <p class="card-description">Gestiona la información de Metodo Pago, como agregar, listar, actualizar,
                         eliminar.</p>
-                    <a href="${pageContext.request.contextPath}/Index/metodopagoadmin.jsp" class="btn_ver_gestion">Gestionar Metodo Pagos</a>
+                    <a href="Controlador?menu=MetodoPago" class="btn_ver_gestion">Gestionar Metodo Pagos</a>
                 </div>
 
                 <div class="admin-card">
@@ -90,7 +89,7 @@
                     <p class="card-description">
                         Gestiona la información de Productos, como agregar, listar, actualizar, eliminar.
                     </p>
-                    <a href="${pageContext.request.contextPath}/Index/vistaproductoadmin.jsp" class="btn_ver_gestion">Gestionar Productos</a>
+                    <a href="Controlador?menu=Producto" class="btn_ver_gestion">Gestionar Productos</a>
                 </div>
 
                 <div class="admin-card">
@@ -100,7 +99,7 @@
                     <p class="card-description">Gestiona la información de Pedido, como agregar, listar, actualizar,
                         eliminar.
                     </p>
-                    <a href="${pageContext.request.contextPath}/Index/vistapedidoadmin.jsp" class="btn_ver_gestion">Gestionar Pedidos</a>
+                    <a href="Controlador?menu=Pedido" class="btn_ver_gestion">Gestionar Pedidos</a>
                 </div>
 
                 <div class="admin-card">
@@ -109,7 +108,7 @@
                     <h3 class="card-title">Detalle Pedido</h3>
                     <p class="card-description">Gestiona la información de Detalle Pedido, como agregar, listar, actualizar,
                         eliminar.</p>
-                    <a href="${pageContext.request.contextPath}/Index/vistadetallepedidoadmin.jsp" class="btn_ver_gestion">Gestionar Detalle Pedido</a>
+                    <a href="Controlador?menu=DetallePedido" class="btn_ver_gestion">Gestionar Detalle Pedido</a>
                 </div>
 
                 <div class="admin-card">
@@ -118,17 +117,7 @@
                     <h3 class="card-title">Factura</h3>
                     <p class="card-description">Gestiona la información de Factura, como agregar, listar, actualizar,
                         eliminar.</p>
-                    <a href="${pageContext.request.contextPath}/Index/VistaFacturaAdmin.jsp" class="btn_ver_gestion">Gestionar Facturas</a>
-                </div>
-
-                <div class="admin-card">
-                    <span class="card-icon">
-                        <i class="fa-solid fa-address-book"></i> </span>
-                    <h3 class="card-title">Empleado</h3>
-                    <p class="card-description">Gestiona la información del Empleado, como agregar, listar, actualizar,
-                        eliminar.
-                    </p>
-                    <a href="${pageContext.request.contextPath}/Index/vistaempleadoadmin.jsp" class="btn_ver_gestion">Gestionar Empleados</a>
+                    <a href="Controlador?menu=Factura" class="btn_ver_gestion">Gestionar Facturas</a>
                 </div>
             </div>
         </div>
