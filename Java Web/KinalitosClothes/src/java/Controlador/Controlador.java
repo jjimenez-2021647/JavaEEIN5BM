@@ -1,6 +1,6 @@
 package Controlador;
 
-import com.kinalitosclothes.modelo.EmpleadosDAO;
+import com.kinalitosclothes.modelo.UsuariosDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -26,7 +26,7 @@ public class Controlador extends HttpServlet {
         String accion = request.getParameter("accion");
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("Index/Principal.jsp").forward(request, response);
-        }else if (menu.equals("Empleado")){
+        }else if (menu.equals("Usuarios")){
             switch (accion) {
                 case "Listar":
                     /*List listaEmpleados = EmpleadosDAO.listar();

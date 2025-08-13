@@ -28,7 +28,7 @@
                     <a href="#"><i class="fa fa-search"></i></a>
                     <a href="${pageContext.request.contextPath}/Index/mispedidos.jsp"><i class="fa fa-shopping-cart"></i></a>
                     <a href="${pageContext.request.contextPath}/Index/VistaUsuarioCliente.jsp" class="logo-usuario">
-                        <img src="${pageContext.request.contextPath}/Images/Logo_K.C.png" alt="Usuario">
+                        <img src="${pageContext.request.contextPath}/Images/CO-K.C.jpg" alt="Usuario">
                     </a>
                 </div>
             </div>

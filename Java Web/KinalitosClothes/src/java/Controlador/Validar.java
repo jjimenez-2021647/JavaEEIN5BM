@@ -1,7 +1,7 @@
 package Controlador;
 
-import com.kinalitosclothes.modelo.Empleados;
-import com.kinalitosclothes.modelo.EmpleadosDAO;
+import com.kinalitosclothes.modelo.Usuarios;
+import com.kinalitosclothes.modelo.UsuariosDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Validar")
 public class Validar extends HttpServlet {
-    EmpleadosDAO empleadosDAO = new EmpleadosDAO();
-    Empleados empleados = new Empleados();
+    UsuariosDAO usuariosDAO = new UsuariosDAO();
+    Usuarios usuarios = new Usuarios();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -55,11 +55,11 @@ public class Validar extends HttpServlet {
         //Capturar la peticion del usuario a nivel del servidor
         String accion = request.getParameter("accion");
         if (accion.equalsIgnoreCase("Ingresar")) {
-            String user = request.getParameter("txtUsuario");
+            String email = request.getParameter("txtCorreo");
             String pass = request.getParameter("txtPassword");
-            empleados = empleadosDAO.validar(user, pass);
-            if (empleados.getNombreUsuario() != null) {
-                request.setAttribute("nombreUsuario", empleados);
+            usuarios = usuariosDAO.validar(email, pass);
+            if (usuarios.getCorreoUsuario() != null) {
+                request.setAttribute("correoUsuario", usuarios);
                 request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
             }else{
                 request.getRequestDispatcher("index.jsp").forward(request, response);

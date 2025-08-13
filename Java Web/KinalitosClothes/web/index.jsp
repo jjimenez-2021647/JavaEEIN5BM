@@ -59,7 +59,7 @@
                                                 <form action="Validar" method="Post">
                                                     <h4 class="heading">Inicio de Sesión</h4>
                                                     <div class="form-group">
-                                                        <input type="text" name="txtUsuario" id="txtUsuario" class="form-style" placeholder="Usuario" autocomplete="off" required>
+                                                        <input type="text" name="txtCorreo" id="txtCorreo" class="form-style" placeholder="Email" autocomplete="off" required>
                                                         <i class="input-icon material-icons">perm_identity</i>
                                                     </div>
                                                     <div class="form-group">
@@ -82,7 +82,7 @@
                                                 <form action="" method="post">
                                                     <h4 class="heading">Registrarse</h4>
                                                     <div class="form-group">
-                                                        <input type="text" name="txtUsuarioR" id="usuario_registro" class="form-style" placeholder="Usuario" autocomplete="off" required>
+                                                        <input type="text" name="txtUsuarioR" id="usuario_registro" class="form-style" placeholder="Email" autocomplete="off" required>
                                                         <i class="input-icon material-icons">perm_identity</i>
                                                     </div>
                                                     <div class="form-group">

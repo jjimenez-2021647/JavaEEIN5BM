@@ -32,8 +32,24 @@
                     <form>
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="text" class="entrada_texto" id="nombreUsuario" required>
+                                <input type="text" class="entrada_texto" id="txtNombreUsuario" required>
                                 <label class="label-input">Nombre Usuario</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="entrada_texto" id="txtApellidoUsuario" required>
+                                <label class="label-input">Apellido Usuario</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="entrada_texto" id="txtCorreoUsuario" required>
+                                <label class="label-input">Correo</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="entrada_texto" id="txtTelefonoUsuario" required>
+                                <label class="label-input">Telefono</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="entrada_texto" id="txtDireccionUsuario" required>
+                                <label class="label-input">Direccion</label>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="entrada_texto" id="contraseñaUsuario" required>
@@ -53,14 +69,15 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn_crear">
-                                <span class="bnt_texto">Crear Usuario</span>
+                            <button type="button" class="btn_actualizar" id="btnCrearUsuario">
+                                <span class="btn_texto">Crear Usuario</span>
                                 <span class="btn_icono">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </span>
                             </button>
-                            <button type="button" class="btn_actualizar">
-                                <span class="bnt_texto">Actualizar</span>
+
+                            <button type="button" class="btn_actualizar" id="btnActualizarUsuario">
+                                <span class="btn_texto">Actualizar</span>
                                 <span class="btn_icono">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </span>
@@ -73,12 +90,15 @@
                 <div class="section">
                     <h2>Listar</h2>
                     <div class="table-container">
-
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Codigo Usuario</th>
-                                    <th>Nombre Usuario</th>
+                                    <th>Codigo del Usuario</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Correo</th>
+                                    <th>Telefono</th>
+                                    <th>Direccion</th>
                                     <th>Contraseña Usuario</th>
                                     <th>Tipo Usuario</th>
                                     <th>Fecha Registro</th>
@@ -87,33 +107,37 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>21</td>
-                                    <td>1</td>
-                                    <td>100</td>
+                                    <td>20</td>
+                                    <td>Josué</td>
+                                    <td>Jiménez</td>
+                                    <td>joshua.ja2007@gmail.com</td>
+                                    <td>+502 0505-1055</td>
+                                    <td>Zona 10, Guatemala</td>
+                                    <td>1818</td>
                                     <td>Empleado</td>
                                     <td>2025-07-06</td>
                                     <td>
                                         <div class="botonesTabla">
-                                            <button type="button" class="btn_editar" id="btnEditarRegistro">
-                                                <span class="bnt_texto">Editar</span>
+                                            <button type="button" class="btn_editar" id="btnEditarUsuario">
+                                                <span class="btn_texto">Editar</span>
                                                 <span class="btn_icono">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </span>
                                             </button>
 
-                                            <button type="button" class="btn_eliminar" id="btnEliminarRegistro">
-                                                <span class="bnt_texto">Eliminar</span>
+                                            <button type="button" class="btn_eliminar" id="btnEliminarUsuario">
+                                                <span class="btn_texto">Eliminar</span>
                                                 <span class="btn_icono">
-                                                    <i class="fa fa-trash"></i></i>
+                                                    <i class="fa fa-trash"></i>
                                                 </span>
                                             </button>
                                         </div>
                                     </td>
-
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+
                     <form class="mensaje_eliminar">
                         <input type="hidden">
                         <div class="message warning">

@@ -397,6 +397,7 @@ input[type="checkbox"] {
 .text-center {
     text-align: center;
 }
+
 /*MEDIA QUERIES*/
 @media (max-width: 992px) {
     nav .menu-btn i {

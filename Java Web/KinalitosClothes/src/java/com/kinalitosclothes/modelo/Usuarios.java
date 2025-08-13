@@ -5,7 +5,12 @@ import java.util.Date;
 public class Usuarios {
 
     private int codigoUsuario;
-    private String nombreUsuario, contraseñaUsuario;
+    private String nombreUsuario;
+    private String apellidoUsuario;
+    private String correoUsuario;
+    private String telefonoUsuario;
+    private String direccionUsuario;
+    private String contraseñaUsuario;
     private TipoUsuarios tipoUsuario;
     private Date fechaRegistro;
 
@@ -16,9 +21,13 @@ public class Usuarios {
     public Usuarios() {
     }
 
-    public Usuarios(int codigoUsuario, String nombreUsuario, String contraseñaUsuario, TipoUsuarios tipoUsuario, Date fechaRegistro) {
+    public Usuarios(int codigoUsuario, String nombreUsuario, String apellidoUsuario, String correoUsuario, String telefonoUsuario, String direccionUsuario, String contraseñaUsuario, TipoUsuarios tipoUsuario, Date fechaRegistro) {
         this.codigoUsuario = codigoUsuario;
         this.nombreUsuario = nombreUsuario;
+        this.apellidoUsuario = apellidoUsuario;
+        this.correoUsuario = correoUsuario;
+        this.telefonoUsuario = telefonoUsuario;
+        this.direccionUsuario = direccionUsuario;
         this.contraseñaUsuario = contraseñaUsuario;
         this.tipoUsuario = tipoUsuario;
         this.fechaRegistro = fechaRegistro;
@@ -38,6 +47,38 @@ public class Usuarios {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getApellidoUsuario() {
+        return apellidoUsuario;
+    }
+
+    public void setApellidoUsuario(String apellidoUsuario) {
+        this.apellidoUsuario = apellidoUsuario;
+    }
+
+    public String getCorreoUsuario() {
+        return correoUsuario;
+    }
+
+    public void setCorreoUsuario(String correoUsuario) {
+        this.correoUsuario = correoUsuario;
+    }
+
+    public String getTelefonoUsuario() {
+        return telefonoUsuario;
+    }
+
+    public void setTelefonoUsuario(String telefonoUsuario) {
+        this.telefonoUsuario = telefonoUsuario;
+    }
+
+    public String getDireccionUsuario() {
+        return direccionUsuario;
+    }
+
+    public void setDireccionUsuario(String direccionUsuario) {
+        this.direccionUsuario = direccionUsuario;
     }
 
     public String getContraseñaUsuario() {
@@ -63,7 +104,9 @@ public class Usuarios {
     public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
-
+    
+    
+        /*
     @Override
     public String toString() {
         return "Usuario{" + "\nCodigo Usuario: " + codigoUsuario
@@ -71,6 +114,5 @@ public class Usuarios {
                 + "\nClave de acceso: " + contraseñaUsuario
                 + "\nTipo Usuario: " + tipoUsuario
                 + "\nFecha Registro: " + fechaRegistro + '}';
-    }
-
+    }*/
 }
