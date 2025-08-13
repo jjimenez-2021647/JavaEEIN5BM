@@ -13,8 +13,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conócenos - Kinalitos Clothes</title>
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/conocenos.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/conocenos.css">
     </head>
 
     <body>
@@ -24,9 +24,9 @@
                 <div class="container">
                     <nav>
                         <ul class="menu">
-                            <li><a href="menu.jsp">INICIO</a></li>
-                            <li><a href="vistaproducto.jsp">TIENDA</a></li>
-                            <li><a href="vistaadmin.jsp">ADMINISTRACION</a></li>
+                            <li><a href="${pageContext.request.contextPath}/Index/Principal.jsp">INICIO</a></li>
+                            <li><a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp">TIENDA</a></li>
+                            <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">ADMINISTRACION</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -76,7 +76,7 @@
                             <!--Jefry-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/CEO-KC.jpg" alt="Fundador Jefry Cruz">
+                                    <img src="${pageContext.request.contextPath}/Images/CEO-KC.jpg" alt="Fundador Jefry Cruz">
                                 </div>
                                 <h4 class="CEO-titulo">Jefry Cruz</h4>
                                 <p class="CEO-descripcion">
@@ -87,7 +87,7 @@
                             <!--Jimenez-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/CO-K.C.jpg" alt="Co-Fundador Jiménez">
+                                    <img src="${pageContext.request.contextPath}/Images/CO-K.C.jpg" alt="Co-Fundador Jiménez">
                                 </div>
                                 <h4 class="CEO-titulo">Josué Jiménez</h4>
                                 <p class="CEO-descripcion">
@@ -98,7 +98,7 @@
                             <!--Roberto-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/roberto.jpg" alt="Diseñador Roberto">
+                                    <img src="${pageContext.request.contextPath}/Images/roberto.jpg" alt="Diseñador Roberto">
                                 </div>
                                 <h4 class="CEO-titulo">Roberto Rodríguez</h4>
                                 <p class="CEO-descripcion">
@@ -109,7 +109,7 @@
                             <!--Rhandy-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/Rhandy.jpg" alt="Ventas Rhandy">
+                                    <img src="${pageContext.request.contextPath}/Images/Rhandy.jpg" alt="Ventas Rhandy">
                                 </div>
                                 <h4 class="CEO-titulo">Rhandy Caná</h4>
                                 <p class="CEO-descripcion">
@@ -120,7 +120,7 @@
                             <!--Molina-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/molina.jpg" alt="Finanzas Molina">
+                                    <img src="${pageContext.request.contextPath}/Images/molina.jpg" alt="Finanzas Molina">
                                 </div>
                                 <h4 class="CEO-titulo">Sebastián Molina</h4>
                                 <p class="CEO-descripcion">
@@ -131,7 +131,7 @@
                             <!--Jeremy-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/Redes_jeremy.png" alt="Redes Jeremy">
+                                    <img src="${pageContext.request.contextPath}/Images/Redes_jeremy.png" alt="Redes Jeremy">
                                 </div>
                                 <h4 class="CEO-titulo">Jeremy Mendez</h4>
                                 <p class="CEO-descripcion">
@@ -142,7 +142,7 @@
                             <!--Arocha-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/Arocha.png" alt="Logística Arocha">
+                                    <img src="${pageContext.request.contextPath}/Images/Arocha.png" alt="Logística Arocha">
                                 </div>
                                 <h4 class="CEO-titulo">Alejandro Arocha</h4>
                                 <p class="CEO-descripcion">
@@ -153,7 +153,7 @@
                             <!--Joshua-->
                             <div class="CEO-item">
                                 <div class="CEO-img">
-                                    <img src="../Images/joshua.jpg" alt="Diseño Joshua">
+                                    <img src="${pageContext.request.contextPath}/Images/joshua.jpg" alt="Diseño Joshua">
                                 </div>
                                 <h4 class="CEO-titulo">Joshua Pérez</h4>
                                 <p class="CEO-descripcion">
@@ -177,7 +177,7 @@
                     <div class="cuadro-final">
                         <h3>¿Listo para renovar tu estilo?</h3>
                         <p>Descubre la moda que te representa y luce increíble todos los días...</p>
-                        <a href="vistaproducto.jsp" class="btn-contacto">Explorar la tienda</a>
+                        <a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp" class="btn-contacto">Explorar la tienda</a>
                     </div>
 
                 </section>

@@ -9,8 +9,8 @@
         <meta https-equiv=" X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CRUD_MetodoPagos</title>
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/metodopagoadmin.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/metodopagoadmin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
 
@@ -19,7 +19,7 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="vistaadmin.jsp">Menu Administrador</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">Menu Administrador</a></li>
                 </ul>
             </div>
         </nav>

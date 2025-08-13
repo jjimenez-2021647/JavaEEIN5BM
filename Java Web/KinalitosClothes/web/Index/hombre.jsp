@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KC Store - Sección Hombre</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-    <link rel="stylesheet" href="../Styles/vistaproducto.css">
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/vistaproducto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -17,9 +17,9 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="menu.jsp">INICIO</a></li>
-                    <li><a href="conocenos.jsp">NOSOTROS</a></li>
-                    <li><a href="vistaadmin.jsp">ADMINISTRACION</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/Principal.jsp">INICIO</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/conocenos.jsp">NOSOTROS</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">ADMINISTRACION</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,8 +32,8 @@
                 <div class="barrabuscar">
                     <select onchange="if(this.value) window.location.href=this.value;">
                             <option value="">Selecciona categoría</option>
-                            <option value="hombre.jsp">Hombre</option>
-                            <option value="mujer.jsp">Mujer</option>
+                            <option value="${pageContext.request.contextPath}/Index/hombre.jsp">Hombre</option>
+                            <option value="${pageContext.request.contextPath}/Index/mujer.jsp">Mujer</option>
                             <option value="#">Juvenil</option>
                     </select>
                 </div>
@@ -42,7 +42,7 @@
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-image">
-                    <img src="../Images/ropap5.jpg" alt="playera oversize">
+                    <img src="${pageContext.request.contextPath}/Images/ropap5.jpg" alt="playera oversize">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Camiseta de <b>Los Angeles</b></h3>
@@ -66,7 +66,7 @@
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="../Images/ropap6.jpg" alt="playera oversize">
+                    <img src="${pageContext.request.contextPath}/Images/ropap6.jpg" alt="playera oversize">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Sudadera Con Capucha</h3>
@@ -90,7 +90,7 @@
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="../Images/ropa2.jpg" alt="playera oversize">
+                    <img src="${pageContext.request.contextPath}/Images/ropa2.jpg" alt="playera oversize">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Sudadera sin capucha</h3>
@@ -114,7 +114,7 @@
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="../Images/ropasec2.5.jpg" alt="Pantalon de Hombre">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.5.jpg" alt="Pantalon de Hombre">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Pantalon de Hombre</h3>

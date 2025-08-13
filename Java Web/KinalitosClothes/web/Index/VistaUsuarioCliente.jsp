@@ -5,15 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuario y Cliente</title>
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/UsuarioCliente.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/UsuarioCliente.css">
     </head>
     <body>
         <nav class="navbar">
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="menu.jsp">Inicio</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/Principal.jsp">Inicio</a></li>
                 </ul>
             </div>  
         </nav>
@@ -28,7 +28,7 @@
                 <div class="factura-info">
                     <div class="profile-image-section">
                         <div class="profile-image-container">
-                            <img src="../Images/CO-K.C.jpg" alt="Foto de perfil" class="profile-image" id="profileImage">
+                            <img src="${pageContext.request.contextPath}/Images/CO-K.C.jpg" alt="Foto de perfil" class="profile-image" id="profileImage">
                         </div>
                         <button class="btn-edit-photo" id="editarFoto">Editar</button>
                     </div>
@@ -126,7 +126,7 @@
 
         <!-- Botón Cerrar Sesión -->
         <div class="logout-section">
-            <a id="CerrarSesion" class="btn btn-logout" href="../index.jsp">Cerrar Sesión</a>
+            <a id="CerrarSesion" class="btn btn-logout" href="${pageContext.request.contextPath}/Index/Principal.jsp">Cerrar Sesión</a>
         </div>
     </body>
 </html>

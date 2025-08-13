@@ -9,8 +9,8 @@
         <meta https-equiv=" X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CRUD_Empleado</title>
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/vistaempleadoadmin.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/vistaempleadoadmin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
 
@@ -19,7 +19,7 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="vistaadmin.jsp">Menu Administrador</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">Menu Administrador</a></li>
                 </ul>
             </div>
         </nav>
@@ -54,27 +54,33 @@
                                 <label class="label-input">Dirección</label>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="entrada_texto" name="stock" min="0" placeholder="0"
-                                       required id="numCodigoUsuario">
-                                <label class="label-input-number">Codigo de Usuario</label>
+                                <input type="text" class="entrada_texto" id="nombreUsuario" required>
+                                <label class="label-input">Nombre Usuario</label>
                             </div>
-
-
-                            <button type="button" class="btn_crear_producto">
-                                <span class="bnt_texto">Crear Empleado</span>
+                            <div class="form-group">
+                                <input type="password" class="entrada_texto" id="contraseñaUsuario" required>
+                                <label class="label-input">Contraseña</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="entrada_texto" id="fechaRegistro" required>
+                                <label class="label-input-date"></label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn_actualizar" id="btnCrearCliente">
+                                <span class="btn_texto">Crear Empleado</span>
                                 <span class="btn_icono">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </span>
                             </button>
 
-                            <button type="button" class="btn_actualizar">
-                                <span class="bnt_texto">Actualizar</span>
+                            <button type="button" class="btn_actualizar" id="btnActualizarCliente">
+                                <span class="btn_texto">Actualizar</span>
                                 <span class="btn_icono">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </span>
                             </button>
                         </div>
-
                     </form>
                 </div>
 
@@ -107,19 +113,23 @@
                                     <th scope="col">Correo</th>
                                     <th scope="col">Telefono</th>
                                     <th scope="col">Dirección</th>
-                                    <th scope="col">Codigo Usuario</th>
+                                    <th>Nombre Usuario</th>
+                                    <th>Contraseña Usuario</th>
+                                    <th>Fecha Registro</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Pantalon Campana</td>
-                                    <td>Pantalon tonos azules</td>
-                                    <td>Q 250.00</td>
-                                    <td>5</td>
-                                    <td>1</td>
-                                    <td>2</td>
+                                    <td>Josué</td>
+                                    <td>Jimenez</td>
+                                    <td>josuej@gmail.com</td>
+                                    <td>+502 2222-2222</td>
+                                    <td>Zona 10</td>
+                                    <td>Josuu</td>
+                                    <td>1234</td>
+                                    <td>2025-07-06</td>
                                     <td>
                                         <div class="botonesTabla">
                                             <button type="button" class="btn_editar" id="btnEditarRegistro">

@@ -5,15 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Factura</title>
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/Factura.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/Factura.css">
     </head>
     <body>
         <nav class="navbar">
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="mispedidos.jsp">Mis Pedidos</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/mispedidos.jsp">Mis Pedidos</a></li>
                 </ul>
             </div>  
         </nav>

@@ -123,6 +123,7 @@ h1 {
 .section h2 {
     color: #2c3e50;
     margin-bottom: 25px;
+    /*Color de la linea debajo del texto*/
     border-bottom: 3px solid #00b7ff;
     padding-bottom: 10px;
     font-size: 1.8rem;
@@ -162,6 +163,7 @@ h1 {
 .label-input {
     position: absolute;
     left: 15px;
+    /*Color del texto dentro del input*/
     color: #000000;
     pointer-events: none;
     transform: translateY(1rem);
@@ -171,6 +173,7 @@ h1 {
 .label-input-number {
     position: absolute;
     left: 15px;
+    /*Color del texto dentro del input*/
     color: transparent;
     pointer-events: none;
     transform: translateY(1rem);
@@ -188,14 +191,35 @@ h1 {
     transform: translateY(-50%) scale(0.8);
     background-color: white;
     padding: 0 .2em;
+    /*color del texto cuando sube*/
     color: #000000;
 }
 
-.btn_crear_producto {
+.label-input-date {
+    position: absolute;
+    left: 15px;
+    color: #000000;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label-input-date::before {
+    content: "";
+}
+
+.entrada_texto[type="date"]:focus ~ .label-input-date::before,
+.entrada_texto[type="date"]:valid ~ .label-input-date::before {
+    content: "Fecha Emision";
+}
+
+/*Boton crear*/
+.btn_crear {
     --main-focus: #00e1ff;
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
+    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -215,7 +239,7 @@ h1 {
     font-family: inherit;
 }
 
-.btn_crear_producto,
+.btn_crear,
 .btn_icono,
 .bnt_texto {
     transition: all 0.3s ease;
@@ -241,37 +265,40 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.btn_crear_producto i {
+.btn_crear i {
     color: var(--main-color);
     font-size: 18px;
     transition: all 0.3s ease;
 }
 
-.btn_crear_producto:hover {
+.btn_crear:hover {
     background-color: var(--bg-color);
 }
 
-.btn_crear_producto:hover .bnt_texto {
+.btn_crear:hover .bnt_texto {
     color: transparent;
 }
 
-.btn_crear_producto:hover .btn_icono {
+.btn_crear:hover .btn_icono {
     width: 100%;
     right: 0;
     background-color: var(--bg-color-sub);
     z-index: 1;
 }
 
-.btn_crear_producto:active {
+.btn_crear:active {
     transform: translate(3px, 3px);
     box-shadow: 0px 0px var(--main-color);
 }
 
+
+/*Boton actualizar*/
 .btn_actualizar {
     --main-focus: #00e1ff;
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
+    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -343,11 +370,14 @@ h1 {
     box-shadow: 0px 0px var(--main-color);
 }
 
+
+/*boton buscar*/
 .btn_buscar {
     --main-focus: #00e1ff;
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
+    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -425,6 +455,7 @@ h1 {
     --font-color: #000000;
     --bg-color-sub: #5ccbff;
     --bg-color: #ffffff;
+    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -496,11 +527,13 @@ h1 {
     box-shadow: 0px 0px var(--main-color);
 }
 
+/*boton eliminar*/
 .btn_eliminar {
     --main-focus: #ff0000;
     --font-color: #000000;
     --bg-color-sub: #ff5c5c;
     --bg-color: #ffffff;
+    /*borde*/
     --main-color: #000000;
 
     position: relative;
@@ -655,7 +688,7 @@ tr:hover {
     .nav-content {
         padding: 15px 20px;
     }
-    
+
     .table-container {
         margin-top: 20px;
     }

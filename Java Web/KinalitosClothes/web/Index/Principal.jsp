@@ -6,8 +6,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>K.C - Inicio</title>
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/menu.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/menu.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     </head>
@@ -19,16 +19,16 @@
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
                     <li><a href="#">INICIO</a></li>
-                    <li><a href="conocenos.jsp">NOSOTROS</a></li>
-                    <li><a href="vistaproducto.jsp">TIENDA</a></li>
-                    <li><a href="vistaadmin.jsp">ADMINISTRACION</a></li>
-                    <li><a href="mispedidos.jsp">MIS PEDIDOS</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/conocenos.jsp">NOSOTROS</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp">TIENDA</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">ADMINISTRACION</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/mispedidos.jsp">MIS PEDIDOS</a></li>
                 </ul>
                 <div class="iconos">
                     <a href="#"><i class="fa fa-search"></i></a>
-                    <a href="mispedidos.jsp"><i class="fa fa-shopping-cart"></i></a>
-                    <a href="VistaUsuarioCliente.jsp" class="logo-usuario">
-                        <img src="../Images/Logo_K.C.png" alt="Usuario">
+                    <a href="${pageContext.request.contextPath}/Index/mispedidos.jsp"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="${pageContext.request.contextPath}/Index/VistaUsuarioCliente.jsp" class="logo-usuario">
+                        <img src="${pageContext.request.contextPath}/Images/Logo_K.C.png" alt="Usuario">
                     </a>
                 </div>
             </div>
@@ -44,26 +44,26 @@
         <!-- SECTOR 2: OFERTAS DESTACADAS -->
         <section class="ofertas-destacadas">
             <div class="oferta">
-                <img src="../Images/ropa1.jpg" alt="Oferta Laptop">
+                <img src="${pageContext.request.contextPath}/Images/ropa1.jpg" alt="Oferta Laptop">
                 <div class="oferta-info">
                     <h3>OFERTA DEL DIA</h3>
                     <p>Hasta 45% de descuento en camicetas</p>
-                    <a href="vistaproducto.jsp" class="btn-oferta">COMPRAR AHORA</a>
+                    <a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp" class="btn-oferta">COMPRAR AHORA</a>
                 </div>
             </div>
             <div class="oferta">
-                <img src="../Images/ropa2.jpg" alt="Oferta Reloj">
+                <img src="${pageContext.request.contextPath}/Images/ropa2.jpg" alt="Oferta Reloj">
                 <div class="oferta-info">
                     <h3>EL MAS VENDIDO</h3>
                     <p>Precio desde $100</p>
-                    <a href="vistaproducto.jsp" class="btn-oferta">COMPRAR AHORA</a>
+                    <a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp" class="btn-oferta">COMPRAR AHORA</a>
                 </div>
             </div>
         </section>
         <!-- SECTOR 3: NUEVOS PRODUCTOS -->
         <section id="NuevosProductos" class="nuevos-productos-titulo">
             <h2>NUEVOS PRODUCTOS</h2>
-            <a href="vistaproducto.jsp" class="btn-ver-todo">VER TODO</a>
+            <a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp" class="btn-ver-todo">VER TODO</a>
         </section>
         <section class="acciones-imagenes-con-flechas">
             <button class="carrusel-flecha flecha-izq" aria-label="Anterior">
@@ -114,16 +114,16 @@
             </button>
             <section class="acciones-imagenes">
                 <div class="accion-imagen">
-                    <img src="../Images/ropap3.jpg" alt="Producto 1">
+                    <img src="${pageContext.request.contextPath}/Images/ropap3.jpg" alt="Producto 1">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropap4.jpg" alt="Producto 2">
+                    <img src="${pageContext.request.contextPath}/Images/ropap4.jpg" alt="Producto 2">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropap5.jpg" alt="Producto 3">
+                    <img src="${pageContext.request.contextPath}/Images/ropap5.jpg" alt="Producto 3">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropap6.jpg" alt="Producto 4">
+                    <img src="${pageContext.request.contextPath}/Images/ropap6.jpg" alt="Producto 4">
                 </div>
             </section>
             <button class="carrusel-flecha flecha-der" aria-label="Siguiente">
@@ -178,16 +178,16 @@
             <h2 class="titulo-resenas">RESEÑAS DE NUESTROS CLIENTES</h2>
             <div class="resenas-lista">
                 <div class="resena">
-                    <p>"Â¡La calidad de la ropa es excelente y el envÃ­o fue muy rÃ¡pido! Sin duda volverÃ© a comprar."</p>
-                    <span class="cliente">ANA PÃREZ</span>
+                    <p>"¡La calidad de la ropa es excelente y el envio fue muy rapido! Sin duda volveria a comprar."</p>
+                    <span class="cliente">Ana Perez</span>
                 </div>
                 <div class="resena">
-                    <p>"Me encantÃ³ la variedad de estilos y los precios accesibles. Â¡Muy recomendable!"</p>
-                    <span class="cliente">CARLOS RAMÃREZ</span>
+                    <p>"Me encanta la variedad de estilos y los precios accesibles. ¡Muy recomendable!"</p>
+                    <span class="cliente">Carlos Mendez</span>
                 </div>
                 <div class="resena">
-                    <p>"El servicio al cliente fue muy atento y la ropa llegÃ³ en perfecto estado."</p>
-                    <span class="cliente">MARÃA LÃPEZ</span>
+                    <p>"El servicio al cliente fue muy atento y la ropa llega en perfecto estado."</p>
+                    <span class="cliente">Maria Lopez</span>
                 </div>
             </div>
             <div class="resenas-puntos">
@@ -197,12 +197,12 @@
             </div>
         </section>
         <section class="banner-imagen">
-            <img src="../Images/fondoh.jpg" alt="Banner Tienda" class="banner-img">
+            <img src="${pageContext.request.contextPath}/Images/fondoh.jpg" alt="Banner Tienda" class="banner-img">
         </section>
         <!-- SECTOR 5: PRODUCTOS DESTACADOS Y ARTÃCULOS DE MODA -->
         <section class="nuevos-productos-titulo">
             <h2>PRODUCTOS DESTACADOS</h2>
-            <a href="vistaproducto.jsp" class="btn-ver-todo">VER TODO</a>
+            <a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp" class="btn-ver-todo">VER TODO</a>
         </section>
         <section class="acciones-imagenes-con-flechas">
             <button class="carrusel-flecha flecha-izq" aria-label="Anterior">
@@ -218,16 +218,16 @@
             </button>
             <section class="acciones-imagenes">
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec2.jpg" alt="Producto Destacado 1">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.jpg" alt="Producto Destacado 1">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec2.3.jpg" alt="Producto Destacado 2">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.3.jpg" alt="Producto Destacado 2">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec2.4.jpg" alt="Producto Destacado 3">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.4.jpg" alt="Producto Destacado 3">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec2.5.jpg" alt="Producto Destacado 4">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec2.5.jpg" alt="Producto Destacado 4">
                 </div>
             </section>
             <button class="carrusel-flecha flecha-der" aria-label="Siguiente">
@@ -244,7 +244,7 @@
         </section>
         <section class="nuevos-productos-titulo">
             <h2>ARTICULOS DE MODA</h2>
-            <a href="vistaproducto.jsp" class="btn-ver-todo">VER TODO</a>
+            <a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp" class="btn-ver-todo">VER TODO</a>
         </section>
         <section class="acciones-imagenes-con-flechas">
             <button class="carrusel-flecha flecha-izq" aria-label="Anterior">
@@ -260,16 +260,16 @@
             </button>
             <section class="acciones-imagenes">
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec3.jpg" alt="Producto Destacado 1">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.jpg" alt="Producto Destacado 1">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec3.2.jpg" alt="Producto Destacado 2">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.2.jpg" alt="Producto Destacado 2">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec3.4.jpg" alt="Producto Destacado 3">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.4.jpg" alt="Producto Destacado 3">
                 </div>
                 <div class="accion-imagen">
-                    <img src="../Images/ropasec3.3.jpg" alt="Producto Destacado 4">
+                    <img src="${pageContext.request.contextPath}/Images/ropasec3.3.jpg" alt="Producto Destacado 4">
                 </div>
             </section>
             <button class="carrusel-flecha flecha-der" aria-label="Siguiente">

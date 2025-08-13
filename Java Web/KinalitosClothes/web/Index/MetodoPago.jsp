@@ -6,8 +6,8 @@
         <meta charset="UTF-8">
         <title>KC Store - Metodo Pago</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/metodoPago.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/metodoPago.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
 
@@ -16,7 +16,7 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="mispedidos.jsp">Mis Pedidos</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/mispedidos.jsp">Mis Pedidos</a></li>
                 </ul>
             </div>
 

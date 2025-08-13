@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CRUD_Cliente</title>
-        <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-        <link rel="stylesheet" href="../Styles/vistaclientesadmin.css">
+        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/vistaclientesadmin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
 
@@ -17,7 +17,7 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="vistaadmin.jsp">Menu Administrador</a></li>
+                    <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">Menu Administrador</a></li>
                 </ul>
             </div>
         </nav>
@@ -52,16 +52,23 @@
                                 <label class="label-input">Direccion</label>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="entrada_texto" id="CodigoUsuario" name="stock" min="0" placeholder="0"
-                                    required>
-                                <label class="label-input-number">Codigo del Usuario</label>
+                                <input type="text" class="entrada_texto" id="nombreUsuario" required>
+                                <label class="label-input">Nombre Usuario</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="entrada_texto" id="contraseñaUsuario" required>
+                                <label class="label-input">Contraseña</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="entrada_texto" id="fechaRegistro" required>
+                                <label class="label-input-date"></label>
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn_crear" id="btnCrearCliente">
+                            <button type="button" class="btn_actualizar" id="btnCrearCliente">
                                 <span class="btn_texto">Crear Cliente</span>
                                 <span class="btn_icono">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                 </span>
                             </button>
 
@@ -88,19 +95,23 @@
                                     <th>Correo</th>
                                     <th>Telefono</th>
                                     <th>Direccion</th>
-                                    <th>Codigo del Usuario</th>
+                                    <th>Nombre Usuario</th>
+                                    <th>Contraseña Usuario</th>
+                                    <th>Fecha Registro</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Carlos</td>
-                                    <td>Ramírez</td>
-                                    <td>carlos.ramirez@gmail.com</td>
-                                    <td>+502 5123-4567</td>
-                                    <td>Zona 1, Ciudad de Guatemala</td>
-                                    <td>1</td>
+                                    <td>Josué</td>
+                                    <td>Jimenez</td>
+                                    <td>josuej@gmail.com</td>
+                                    <td>+502 2222-2222</td>
+                                    <td>Zona 10</td>
+                                    <td>Josuu</td>
+                                    <td>1234</td>
+                                    <td>2025-07-06</td>
                                     <td>
                                         <div class="botonesTabla">
                                             <button type="button" class="btn_editar" id="btnEditarCliente">

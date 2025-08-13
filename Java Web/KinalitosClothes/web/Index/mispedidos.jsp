@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mis Pedidos - Kinalitos Clothes</title>
-    <link rel="icon" type="image/x-icon" href="../Images/Logo_K.C.png">
-    <link rel="stylesheet" href="../Styles/mispedidos.css">
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/Images/Logo_K.C.png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/mispedidos.css">
 </head>
 <body>
     <!-- Header -->
@@ -15,9 +15,9 @@
         <nav class="nav">
             <a href="#" class="logo">KC</a>
             <ul class="nav-links">
-                <li><a href="menu.jsp">INICIO</a></li>
-                <li><a href="vistaproducto.jsp">TIENDA</a></li>
-                <li><a href="conocenos.jsp">NOSOTROS</a></li>
+                <li><a href="${pageContext.request.contextPath}/Index/menu.jsp">INICIO</a></li>
+                <li><a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp">TIENDA</a></li>
+                <li><a href="${pageContext.request.contextPath}/Index/conocenos.jsp">NOSOTROS</a></li>
             </ul>
         </nav>
     </header>
@@ -58,9 +58,9 @@
             </div>
 
             <div class="pedido-actions">
-                <a href="vistadetallepedido.jsp" class="btn btn-primary">Ver Detalles</a>
-                <a href="VistaFacturaCliente.jsp" class="btn btn-secondary">Ver Factura</a>
-                <a href="MetodoPago.jsp" class="btn btn-primary">Metodo Pago </a>
+                <a href="${pageContext.request.contextPath}/Index/vistadetallepedido.jsp" class="btn btn-primary">Ver Detalles</a>
+                <a href="${pageContext.request.contextPath}/Index/VistaFacturaCliente.jsp" class="btn btn-secondary">Ver Factura</a>
+                <a href="${pageContext.request.contextPath}/Index/MetodoPago.jsp" class="btn btn-primary">Metodo Pago </a>
             </div>
         </div>
 
@@ -96,9 +96,9 @@
             </div>
 
             <div class="pedido-actions">
-                <a href="vistadetallepedido.jsp" class="btn btn-primary">Ver Detalles</a>
-                <a href="VistaFacturaCliente.jsp" class="btn btn-secondary">Ver Factura</a>
-                <a href="MetodoPago.jsp" class="btn btn-primary">Metodo Pago </a>
+                <a href="${pageContext.request.contextPath}/Index/vistadetallepedido.jsp" class="btn btn-primary">Ver Detalles</a>
+                <a href="${pageContext.request.contextPath}/Index/VistaFacturaCliente.jsp" class="btn btn-secondary">Ver Factura</a>
+                <a href="${pageContext.request.contextPath}/Index/MetodoPago.jsp" class="btn btn-primary">Metodo Pago </a>
             </div>
         </div>
 
@@ -134,9 +134,9 @@
             </div>
 
             <div class="pedido-actions">
-                <a href="vistadetallepedido.jsp" class="btn btn-primary">Ver Detalles</a>
-                <a href="VistaFacturaCliente.jsp" class="btn btn-secondary">Ver Factura</a>
-                <a href="MetodoPago.jsp" class="btn btn-primary">Metodo Pago </a>
+                <a href="${pageContext.request.contextPath}/Index/vistadetallepedido.jsp" class="btn btn-primary">Ver Detalles</a>
+                <a href="${pageContext.request.contextPath}/Index/VistaFacturaCliente.jsp" class="btn btn-secondary">Ver Factura</a>
+                <a href="${pageContext.request.contextPath}/Index/MetodoPago.jsp" class="btn btn-primary">Metodo Pago </a>
             </div>
         </div>
 
