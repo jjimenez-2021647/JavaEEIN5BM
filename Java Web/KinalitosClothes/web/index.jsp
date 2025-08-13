@@ -70,7 +70,7 @@
                                                         <input type="submit" class="btnIniciar" name="accion" value="Ingresar" placeholder="Entrar">
                                                     </center>
                                                     <p class="text-center">
-                                                        <a href="Index/Principal.jsp" class="link">No te recuerdas de tu contraseña???</a>
+                                                        <a href="#" class="link">No te recuerdas de tu contraseña???</a>
                                                     </p>
                                                 </form>
                                             </div>

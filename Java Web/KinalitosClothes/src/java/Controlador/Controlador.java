@@ -1,5 +1,7 @@
 package Controlador;
 
+import com.kinalitosclothes.modelo.EmpleadosDAO;
+import com.kinalitosclothes.modelo.Usuarios;
 import com.kinalitosclothes.modelo.UsuariosDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,20 +26,93 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
+        Usuarios usuarios = new Usuarios();
+        UsuariosDAO usuariosDao = new UsuariosDAO();
+        
+        int codUsuario;
+
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("Index/Principal.jsp").forward(request, response);
-        }else if (menu.equals("Usuarios")){
+        } else if (menu.equals("Usuarios")) {
             switch (accion) {
                 case "Listar":
-                    /*List listaEmpleados = EmpleadosDAO.listar();
-                    request.setAttribute("empleados", listaEmpleados);*/
+                    List listaUsuarios = usuariosDao.listar();
+                    request.setAttribute("usuarios", listaUsuarios);
+                    break;
+                case "Buscar":
+
                     break;
                 case "Agregar":
+                    String nombreUsuario = request.getParameter("txtNombreUsuario");
+                    String apellidoUsuario = request.getParameter("txtApellidoUsuario");
+                    String correoUsuario = request.getParameter("txtCorreoUsuario");
+                    String telefonoUsuario = request.getParameter("txtTelefonoUsuario");
+                    String direccionUsuario = request.getParameter("txtDireccionUsuario");
+                    String contraseñaUsuario = request.getParameter("txtpassword");
+                    String tipoUsuario = request.getParameter("tipoUsuario");
+                    usuarios.setNombreUsuario(nombreUsuario);
+                    usuarios.setApellidoUsuario(apellidoUsuario);
+                    usuarios.setCorreoUsuario(correoUsuario);
+                    usuarios.setTelefonoUsuario(telefonoUsuario);
+                    usuarios.setDireccionUsuario(direccionUsuario);
+                    usuarios.setContraseñaUsuario(contraseñaUsuario);
+                    usuarios.setTipoUsuario(Usuarios.TipoUsuarios.valueOf(tipoUsuario));
+                    usuariosDao.agregar(usuarios);
+                    if (usuarios != null) {
+                        request.getRequestDispatcher("Controlador?menu=Usuarios&accion=Listar").forward(request, response);
+                    }else{
+                        System.out.println("No sale");
+                    }
+                    break;
+                case "Editar":
+
+                    break;
+                case "Actualizar":
+
+                    break;
+                case "Eliminar":
+
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("No se encontro");
             }
-            
+            request.getRequestDispatcher("/Index/VistaUsuarioAdmin.jsp").forward(request, response);
+        } else if (menu.equals("Proveedor")) {
+            request.getRequestDispatcher("Index/vistaproveedoradmin.jsp").forward(request, response);
+        } else if (menu.equals("Categoria")) {
+            request.getRequestDispatcher("Index/vistacategoria.jsp").forward(request, response);
+        } else if (menu.equals("MetodoPago")) {
+            request.getRequestDispatcher("Index/metodopagoadmin.jsp").forward(request, response);
+        } else if (menu.equals("Producto")) {
+            request.getRequestDispatcher("Index/vistaproductoadmin.jsp").forward(request, response);
+        } else if (menu.equals("Pedido")) {
+            request.getRequestDispatcher("Index/vistapedidoadmin.jsp").forward(request, response);
+        } else if (menu.equals("DetallePedido")) {
+            request.getRequestDispatcher("Index/vistadetallepedidoadmin.jsp").forward(request, response);
+        } else if (menu.equals("Factura")) {
+            request.getRequestDispatcher("Index/VistaFacturaAdmin.jsp").forward(request, response);
+        } else if (menu.equals("VistaAdmin")) {
+            request.getRequestDispatcher("Index/vistaadmin.jsp").forward(request, response);
+        } else if (menu.equals("MetodoPagoC")) {
+            request.getRequestDispatcher("Index/MetodoPago.jsp").forward(request, response);
+        } else if (menu.equals("VistaFacturaC")) {
+            request.getRequestDispatcher("Index/VistaFacturaCliente.jsp").forward(request, response);
+        } else if (menu.equals("VistaUsuariosC")) {
+            request.getRequestDispatcher("Index/VistaUsuariosCliente.jsp").forward(request, response);
+        } else if (menu.equals("Conocenos")) {
+            request.getRequestDispatcher("Index/conocenos.jsp").forward(request, response);
+        } else if (menu.equals("Hombre")) {
+            request.getRequestDispatcher("Index/hombre.jsp").forward(request, response);
+        } else if (menu.equals("MisPedidos")) {
+            request.getRequestDispatcher("Index/mispedidos.jsp").forward(request, response);
+        } else if (menu.equals("Mujer")) {
+            request.getRequestDispatcher("Index/mujer.jsp").forward(request, response);
+        } else if (menu.equals("VistaCategoria")) {
+            request.getRequestDispatcher("Index/vistacategoria.jsp").forward(request, response);
+        } else if (menu.equals("VistaDetallePedido")) {
+            request.getRequestDispatcher("Index/vistadetallepedido.jsp").forward(request, response);
+        } else if (menu.equals("VistaProducto")) {
+            request.getRequestDispatcher("Index/vistaproducto.jsp").forward(request, response);
         }
     }
 

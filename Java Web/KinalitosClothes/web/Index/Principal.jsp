@@ -21,7 +21,7 @@
                     <li><a href="#">INICIO</a></li>
                     <li><a href="${pageContext.request.contextPath}/Index/conocenos.jsp">NOSOTROS</a></li>
                     <li><a href="${pageContext.request.contextPath}/Index/vistaproducto.jsp">TIENDA</a></li>
-                    <li><a href="${pageContext.request.contextPath}/Index/vistaadmin.jsp">ADMINISTRACION</a></li>
+                    <li><a href="Controlador?menu=VistaAdmin">ADMINISTRACION</a></li>
                     <li><a href="${pageContext.request.contextPath}/Index/mispedidos.jsp">MIS PEDIDOS</a></li>
                 </ul>
                 <div class="iconos">

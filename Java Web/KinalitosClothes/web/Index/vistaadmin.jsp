@@ -23,7 +23,7 @@
             <div class="nav-content">
                 <div class="logo">K<span>C</span></div>
                 <ul class="menu">
-                    <li><a href="${pageContext.request.contextPath}/Index/Principal.jsp">INICIO</a></li>
+                    <li><a href="Controlador?menu=Principal">INICIO</a></li>
                 </ul>
             </div>
         </nav>
@@ -79,7 +79,7 @@
                     <p class="card-description">Gestiona la información de Usuarios, como agregar, listar, actualizar,
                         eliminar.
                     </p>
-                    <a href="${pageContext.request.contextPath}/Index/VistaUsuarioAdmin.jsp" class="btn_ver_gestion">Gestionar Usuarios</a>
+                    <a href="Controlador?menu=Usuarios&accion=Listar" class="btn_ver_gestion">Gestionar Usuarios</a>
                 </div>
 
                 <div class="admin-card">
