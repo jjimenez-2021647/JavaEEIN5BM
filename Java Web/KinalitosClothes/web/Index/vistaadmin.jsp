@@ -31,7 +31,7 @@
                     <li><a href="Controlador?menu=Producto">Producto</a></li>
                     <li><a href="Controlador?menu=Pedido">Pedido</a></li>
                     <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
-                    <li><a href="Controlador?menu=Factura">Factura</a></li>
+                    <li><a href="Controlador?menu=Factura&accion=Listar">Factura</a></li>
                 </ul>
             </div>
         </nav>
@@ -117,7 +117,7 @@
                     <h3 class="card-title">Factura</h3>
                     <p class="card-description">Gestiona la información de Factura, como agregar, listar, actualizar,
                         eliminar.</p>
-                    <a href="Controlador?menu=Factura" class="btn_ver_gestion">Gestionar Facturas</a>
+                    <a href="Controlador?menu=Factura&accion=Listar" class="btn_ver_gestion">Gestionar Facturas</a>
                 </div>
             </div>
         </div>

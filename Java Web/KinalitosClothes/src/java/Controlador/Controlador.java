@@ -1,10 +1,7 @@
 package Controlador;
 
-import com.kinalitosclothes.modelo.EmpleadosDAO;
-import com.kinalitosclothes.modelo.Usuarios;
-import com.kinalitosclothes.modelo.UsuariosDAO;
+import com.kinalitosclothes.modelo.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +25,8 @@ public class Controlador extends HttpServlet {
         String accion = request.getParameter("accion");
         Usuarios usuarios = new Usuarios();
         UsuariosDAO usuariosDao = new UsuariosDAO();
+        Facturas facturas = new Facturas();
+        FacturasDAO facturasDao = new FacturasDAO();
         
         int codUsuario;
 
@@ -92,6 +91,44 @@ public class Controlador extends HttpServlet {
         } else if (menu.equals("DetallePedido")) {
             request.getRequestDispatcher("Index/vistadetallepedidoadmin.jsp").forward(request, response);
         } else if (menu.equals("Factura")) {
+            switch (accion) {
+                case "Listar":
+                    List listaFacturas = facturasDao.listar();
+                    request.setAttribute("facturas", listaFacturas);
+                    break;
+                case "Buscar":
+
+                    break;
+                case "Agregar":
+                    String estadoFactura = request.getParameter("txtEstadoFactura");
+                    String formaEntrega = request.getParameter("txtFormaEntrega");
+                    String codigoPedido = request.getParameter("txtCodigoPedido");
+                    String codigoUsuario = request.getParameter("txtCodigoUsuarios");
+                    int codigoP = Integer.parseInt(codigoPedido);
+                    int codigoU = Integer.parseInt(codigoUsuario);
+                    facturas.setEstadoFactura(Facturas.EstadoFactura.valueOf(estadoFactura));
+                    facturas.setFormaEntrega(Facturas.FormaEntrega.valueOf(formaEntrega));
+                    facturas.setCodigoPedido(codigoP);
+                    facturas.setCodigoUsuario(codigoU);
+                    facturasDao.agregar(facturas);
+                    if (facturas != null) {
+                        request.getRequestDispatcher("Controlador?menu=Usuarios&accion=Listar").forward(request, response);
+                    }else{
+                        System.out.println("No sale");
+                    }
+                    break;
+                case "Editar":
+
+                    break;
+                case "Actualizar":
+
+                    break;
+                case "Eliminar":
+
+                    break;
+                default:
+                    System.out.println("No se encontro");
+            }
             request.getRequestDispatcher("Index/VistaFacturaAdmin.jsp").forward(request, response);
         } else if (menu.equals("VistaAdmin")) {
             request.getRequestDispatcher("Index/vistaadmin.jsp").forward(request, response);

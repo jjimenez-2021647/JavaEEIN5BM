@@ -11,7 +11,7 @@ public class Facturas {
     private EstadoFactura estadoFactura;
     private FormaEntrega formaEntrega;
     private int codigoPedido;
-    private int codigoEmpleado;
+    private int codigoUsuario;
 
     public enum EstadoFactura {
         Emitida, Anulada, Pagada
@@ -24,7 +24,7 @@ public class Facturas {
     public Facturas() {
     }
 
-    public Facturas(int codigoFactura, Date fechaEmision, Double descuentoAplicado, Double totalFactura, EstadoFactura estadoFactura, FormaEntrega formaEntrega, int codigoPedido, int codigoEmpleado) {
+    public Facturas(int codigoFactura, Date fechaEmision, Double descuentoAplicado, Double totalFactura, EstadoFactura estadoFactura, FormaEntrega formaEntrega, int codigoPedido, int codigoUsuario) {
         this.codigoFactura = codigoFactura;
         this.fechaEmision = fechaEmision;
         this.descuentoAplicado = descuentoAplicado;
@@ -32,7 +32,7 @@ public class Facturas {
         this.estadoFactura = estadoFactura;
         this.formaEntrega = formaEntrega;
         this.codigoPedido = codigoPedido;
-        this.codigoEmpleado = codigoEmpleado;
+        this.codigoUsuario = codigoUsuario;
     }
 
     public int getCodigoFactura() {
@@ -91,12 +91,12 @@ public class Facturas {
         this.codigoPedido = codigoPedido;
     }
 
-    public int getCodigoEmpleado() {
-        return codigoEmpleado;
+    public int getCodigoUsuario() {
+        return codigoUsuario;
     }
 
-    public void setCodigoEmpleado(int codigoEmpleado) {
-        this.codigoEmpleado = codigoEmpleado;
+    public void setCodigoUsuario(int codigoUsuario) {
+        this.codigoUsuario = codigoUsuario;
     }
 
     @Override
@@ -108,6 +108,6 @@ public class Facturas {
                 + "\nEstado Factura: " + estadoFactura
                 + "\nForma Entrega: " + formaEntrega
                 + "\nCodigo Pedido: " + codigoPedido
-                + "\nCodigo Empleado: " + codigoEmpleado + '}';
+                + "\nCodigo Empleado: " + codigoUsuario + '}';
     }
 }

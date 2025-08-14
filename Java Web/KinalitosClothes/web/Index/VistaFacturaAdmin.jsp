@@ -37,7 +37,7 @@
                 <!--apartado para crear el proveedor-->
                 <div class="section">
                     <h2>Agregar o modificar Factura</h2>
-                    <form>
+                    <form action="Controlador?menu=Facturas" method="Post">
                         <div class="form-row">
                             <div class="form-group">
                                 <input type="date" class="entrada_texto" id="fechaEmision" required>
@@ -52,7 +52,7 @@
                                 <label class="label-input-number">Total</label>
                             </div>
                             <div class="form-group">
-                                <select class="entrada_texto" name="estado_factura" id="estadoFactura" required>
+                                <select class="entrada_texto" name="txtEstadoFactura" id="estadoFactura" required>
                                     <option value="" disabled selected></option>
                                     <option value="Emitida">Emitida</option>
                                     <option value="Anulada">Anulada</option>
@@ -61,7 +61,7 @@
                                 <label class="label-input">Estado</label>
                             </div>
                             <div class="form-group">
-                                <select class="entrada_texto" name="estado_factura" id="formaEntrega" required>
+                                <select class="entrada_texto" name="txtFormaEntrega" id="formaEntrega" required>
                                     <option value="" disabled selected></option>
                                     <option value="Fisica">Fisica</option>
                                     <option value="Electronica">Electronica</option>
@@ -69,18 +69,18 @@
                                 <label class="label-input">Forma Entrega</label>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="entrada_texto" name="codigoPedido" min="0" placeholder="0"
+                                <input type="number" class="entrada_texto" name="txtCodigoPedido" min="0" placeholder="0"
                                        id="codigoPedido" required>
                                 <label class="label-input-number">Codigo del Pedido</label>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="entrada_texto" name="codigoEmpleado" min="0" placeholder="0"
+                                <input type="number" class="entrada_texto" name="txtCodigoUsuarios" min="0" placeholder="0"
                                        id="codigoEmpleado" required>
-                                <label class="label-input-number">Codigo del Empleado</label>
+                                <label class="label-input-number">Codigo del Usuario</label>
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn_crear">
+                            <button type="submit" class="btn_actualizar" name="accion" value="Agregar">
                                 <span class="bnt_texto">Crear Factura</span>
                                 <span class="btn_icono">
                                     <i class="fa-solid fa-plus"></i>
@@ -116,15 +116,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach var="facturas" items="${facturas}">
                                 <tr>
-                                    <td>1</td>
-                                    <td>2025-07-26</td>
-                                    <td>150.00</td>
-                                    <td>499.99</td>
-                                    <td>Emitida</td>
-                                    <td>Electronica</td>
-                                    <td>1</td>
-                                    <td>1</td>
+                                    <td>${factura.getCodigoFactura()}</td>
+                                    <td>${factura.getFechaEmision()}</td>
+                                    <td>${factura.getDescuentoAplicado()}</td>
+                                    <td>${factura.getTotalFactura()}</td>
+                                    <td>${factura.getEstadoFactura()}</td>
+                                    <td>${factura.getFormaEntrega()}</td>
+                                    <td>${factura.getCodigoPedido()}</td>
+                                    <td>${factura.getCodigoUsuario()}</td>
                                     <td>
                                         <div class="botonesTabla">
                                             <button type="button" class="btn_editar" id="btnEditarRegistro">
@@ -144,6 +145,7 @@
                                     </td>
 
                                 </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
