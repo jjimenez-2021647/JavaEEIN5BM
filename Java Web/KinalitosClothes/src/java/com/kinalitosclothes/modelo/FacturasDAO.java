@@ -47,7 +47,7 @@ public class FacturasDAO {
             ps.setString(1, Fac.getEstadoFactura().name());
             ps.setString(2, Fac.getFormaEntrega().name());
             ps.setInt(3, Fac.getCodigoPedido());  
-            ps.setInt(3, Fac.getCodigoUsuario());  
+            ps.setInt(4, Fac.getCodigoUsuario());  
             ps.executeQuery();
         } catch (Exception e) {
             e.printStackTrace();

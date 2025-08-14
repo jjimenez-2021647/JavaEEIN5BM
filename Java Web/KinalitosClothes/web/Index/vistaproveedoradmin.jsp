@@ -25,7 +25,7 @@
                     <li><a href="Controlador?menu=Producto">Producto</a></li>
                     <li><a href="Controlador?menu=Pedido">Pedido</a></li>
                     <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
-                    <li><a href="Controlador?menu=Factura">Factura</a></li>
+                    <li><a href="Controlador?menu=Factura&accion=Listar"">Factura</a></li>
                 </ul>
             </div>
         </nav>

@@ -22,11 +22,11 @@
                     <li><a href="Controlador?menu=Proveedor">Proveedor</a></li>
                     <li><a href="Controlador?menu=Categoria">Categoria</a></li>
                     <li><a href="Controlador?menu=MetodoPago">Metodo P.</a></li>
-                    <li><a href="Controlador?menu=Usuarios&accion=Listar">Usuario</a></li>
+                    <li><a href="#">Usuario</a></li>
                     <li><a href="Controlador?menu=Producto">Producto</a></li>
                     <li><a href="Controlador?menu=Pedido">Pedido</a></li>
                     <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
-                    <li><a href="Controlador?menu=Factura">Factura</a></li>
+                    <li><a href="Controlador?menu=Factura&accion=Listar">Factura</a></li>
                 </ul>
             </div>
         </nav>
@@ -65,7 +65,7 @@
                                 <label class="label-input">Contraseña</label>
                             </div>
                             <div class="form-group">
-                                <select class="entrada_texto" name="tipoUsuario" name="tipoUsuario" value="${usuario.getTipoUsuario()}" required>
+                                <select class="entrada_texto" name="txtTipoUsuario" value="${usuario.getTipoUsuario()}" required>
                                     <option value="" disabled selected></option>
                                     <option value="Empleado">Empleado</option>
                                     <option value="Cliente">Cliente</option>

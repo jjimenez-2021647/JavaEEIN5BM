@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,7 +26,7 @@
                     <li><a href="Controlador?menu=Producto">Producto</a></li>
                     <li><a href="Controlador?menu=Pedido">Pedido</a></li>
                     <li><a href="Controlador?menu=DetallePedido">Detalle P.</a></li>
-                    <li><a href="Controlador?menu=Factura">Factura</a></li>
+                    <li><a href="#">Factura</a></li>
                 </ul>
             </div>
         </nav>
@@ -37,22 +38,22 @@
                 <!--apartado para crear el proveedor-->
                 <div class="section">
                     <h2>Agregar o modificar Factura</h2>
-                    <form action="Controlador?menu=Facturas" method="Post">
+                    <form action="Controlador?menu=Factura" method="Post">
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="date" class="entrada_texto" id="fechaEmision" required>
+                                <input type="date" class="entrada_texto" name="txtFechaEmision" id="fechaEmision" value="${factura.getFechaEmision()}" required>
                                 <label class="label-input-date"></label>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="entrada_texto" name="descuentoAplicado" min="0" placeholder="0" id="descuentoAplicado" required>
+                                <input type="number" class="entrada_texto" name="txtDescuentoAplicado" min="0" placeholder="0" id="descuentoAplicado" value="${factura.getDescuentoAplicado()}" required>
                                 <label class="label-input-number">Descuento Aplicado</label>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="entrada_texto" name="totalFactura" min="0" placeholder="0" id="totalFactura" required>
+                                <input type="number" class="entrada_texto" name="txtTotalFactura" min="0" placeholder="0" id="totalFactura" value="${factura.getTotalFactura()}"required>
                                 <label class="label-input-number">Total</label>
                             </div>
                             <div class="form-group">
-                                <select class="entrada_texto" name="txtEstadoFactura" id="estadoFactura" required>
+                                <select class="entrada_texto" name="txtEstadoFactura" id="estadoFactura" value="${factura.getEstadoFactura()}" required>
                                     <option value="" disabled selected></option>
                                     <option value="Emitida">Emitida</option>
                                     <option value="Anulada">Anulada</option>
@@ -61,7 +62,7 @@
                                 <label class="label-input">Estado</label>
                             </div>
                             <div class="form-group">
-                                <select class="entrada_texto" name="txtFormaEntrega" id="formaEntrega" required>
+                                <select class="entrada_texto" name="txtFormaEntrega" id="formaEntrega" value="${factura.getFormaEntrega()}" required>
                                     <option value="" disabled selected></option>
                                     <option value="Fisica">Fisica</option>
                                     <option value="Electronica">Electronica</option>
@@ -70,12 +71,12 @@
                             </div>
                             <div class="form-group">
                                 <input type="number" class="entrada_texto" name="txtCodigoPedido" min="0" placeholder="0"
-                                       id="codigoPedido" required>
+                                       id="codigoPedido" value="${factura.getCodigoPedido()}" required>
                                 <label class="label-input-number">Codigo del Pedido</label>
                             </div>
                             <div class="form-group">
                                 <input type="number" class="entrada_texto" name="txtCodigoUsuarios" min="0" placeholder="0"
-                                       id="codigoEmpleado" required>
+                                       id="codigoUsuarios" value="${factura.getCodigoUsuario()}" required>
                                 <label class="label-input-number">Codigo del Usuario</label>
                             </div>
                         </div>
@@ -111,12 +112,12 @@
                                     <th>Estado Factura</th>
                                     <th>Forma Entrega</th>
                                     <th>Codigo Pedido</th>
-                                    <th>Codigo Empleado</th>
+                                    <th>Codigo Usuario</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                            <c:forEach var="facturas" items="${facturas}">
+                            <tbody>   
+                            <c:forEach var="factura" items="${facturas}">
                                 <tr>
                                     <td>${factura.getCodigoFactura()}</td>
                                     <td>${factura.getFechaEmision()}</td>

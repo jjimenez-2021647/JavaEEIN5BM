@@ -27,7 +27,6 @@ public class Controlador extends HttpServlet {
         UsuariosDAO usuariosDao = new UsuariosDAO();
         Facturas facturas = new Facturas();
         FacturasDAO facturasDao = new FacturasDAO();
-        
         int codUsuario;
 
         if (menu.equals("Principal")) {
@@ -50,7 +49,7 @@ public class Controlador extends HttpServlet {
                     String telefonoUsuario = request.getParameter("txtTelefonoUsuario");
                     String direccionUsuario = request.getParameter("txtDireccionUsuario");
                     String contraseñaUsuario = request.getParameter("txtpassword");
-                    String tipoUsuario = request.getParameter("tipoUsuario");
+                    String tipoUsuario = request.getParameter("txtTipoUsuario");
                     usuarios.setNombreUsuario(nombreUsuario);
                     usuarios.setApellidoUsuario(apellidoUsuario);
                     usuarios.setCorreoUsuario(correoUsuario);
@@ -112,7 +111,7 @@ public class Controlador extends HttpServlet {
                     facturas.setCodigoUsuario(codigoU);
                     facturasDao.agregar(facturas);
                     if (facturas != null) {
-                        request.getRequestDispatcher("Controlador?menu=Usuarios&accion=Listar").forward(request, response);
+                        request.getRequestDispatcher("Controlador?menu=Factura&accion=Listar").forward(request, response);
                     }else{
                         System.out.println("No sale");
                     }
